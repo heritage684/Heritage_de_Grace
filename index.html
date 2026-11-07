@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Des textes chrétiens réformés pour nourrir la foi et encourager la vie chrétienne.">
+  <title>Héritage de Grâce — Lectures chrétiennes</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#accueil" aria-label="Héritage de Grâce, accueil">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>Héritage <em>de Grâce</em></span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="#lectures">Lectures</a>
+      <a href="#themes">Thèmes</a>
+      <a href="#apropos">À propos</a>
+    </nav>
+  </header>
+
+  <main id="accueil">
+    <section class="hero">
+      <p class="eyebrow">Des trésors pour aujourd’hui</p>
+      <h1>La richesse de l’Évangile,<br><em>transmise à travers les siècles.</em></h1>
+      <p class="hero-copy">Découvrez des écrits chrétiens qui fortifient la foi, élèvent le regard vers Christ et accompagnent la vie quotidienne.</p>
+      <a class="button" href="#lectures">Explorer les lectures <span aria-hidden="true">↓</span></a>
+      <div class="hero-note"><span aria-hidden="true">✧</span> Un projet francophone de littérature chrétienne réformée</div>
+    </section>
+
+    <section class="section" id="lectures">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">La bibliothèque</p>
+          <h2>À lire et à méditer</h2>
+        </div>
+        <label class="search-label" for="search">Rechercher un texte</label>
+        <input id="search" class="search" type="search" placeholder="Titre, auteur, thème…" autocomplete="off">
+      </div>
+      <div class="filters" aria-label="Filtrer par thème">
+        <button class="filter active" type="button" data-filter="all">Tout</button>
+        <button class="filter" type="button" data-filter="foi">Foi</button>
+        <button class="filter" type="button" data-filter="priere">Prière</button>
+        <button class="filter" type="button" data-filter="vie-chretienne">Vie chrétienne</button>
+      </div>
+      <div class="book-grid" id="book-grid">
+        <article class="book-card" data-category="foi" data-search="la grâce de dieu foi évangile à compléter">
+          <span class="card-number">01 <span>— FOI</span></span>
+          <h3>La grâce de Dieu</h3>
+          <p class="card-description">Un texte pour découvrir la beauté de la grâce et de l’Évangile.</p>
+          <p class="card-meta">Lecture à venir · 5 min</p>
+          <a href="#contact" class="text-link">Bientôt disponible <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="book-card" data-category="priere" data-search="apprendre à prier prière communion à compléter">
+          <span class="card-number">02 <span>— PRIÈRE</span></span>
+          <h3>Apprendre à prier</h3>
+          <p class="card-description">Des encouragements pour grandir dans la communion avec Dieu.</p>
+          <p class="card-meta">Lecture à venir · 7 min</p>
+          <a href="#contact" class="text-link">Bientôt disponible <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="book-card" data-category="vie-chretienne" data-search="marcher avec christ vie chrétienne espérance à compléter">
+          <span class="card-number">03 <span>— VIE CHRÉTIENNE</span></span>
+          <h3>Marcher avec Christ</h3>
+          <p class="card-description">Une méditation sur l’espérance et la fidélité au quotidien.</p>
+          <p class="card-meta">Lecture à venir · 6 min</p>
+          <a href="#contact" class="text-link">Bientôt disponible <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <p id="no-results" class="no-results" hidden>Aucun texte ne correspond à cette recherche.</p>
+    </section>
+
+    <section class="topics" id="themes">
+      <p class="eyebrow">Parcourir par thème</p>
+      <h2>Un sujet pour chaque saison</h2>
+      <div class="topic-list">
+        <a href="#lectures">Grâce <span>↗</span></a>
+        <a href="#lectures">Prière <span>↗</span></a>
+        <a href="#lectures">Épreuves <span>↗</span></a>
+        <a href="#lectures">Espérance <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="about" id="apropos">
+      <div class="about-symbol" aria-hidden="true">✦</div>
+      <div>
+        <p class="eyebrow">Notre intention</p>
+        <h2>Recevoir, préserver,<br>partager.</h2>
+      </div>
+      <p class="about-copy">Héritage de Grâce souhaite faire connaître en français les richesses spirituelles léguées par les serviteurs de Dieu d’autrefois, pour l’édification des croyants d’aujourd’hui. Chaque texte sera présenté avec ses références et les informations sur ses droits.</p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <a class="brand footer-brand" href="#accueil"><span class="brand-mark" aria-hidden="true">✦</span><span>Héritage <em>de Grâce</em></span></a>
+    <p>Un projet en construction · Fait avec soin en France</p>
+    <a href="mailto:contact@example.com">Nous écrire</a>
+  </footer>
+</body>
+</html>
