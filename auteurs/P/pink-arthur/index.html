@@ -4,17 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Biographie, livres, articles et citations d'Arthur Walkington Pink.">
+  <meta name="theme-color" content="#14233b">
   <title>Arthur W. Pink — Héritage de Grâce</title>
   <style>
     :root {
-      --ink: #2b261f;
-      --muted: #6d6259;
-      --paper: #f7f2ea;
-      --panel: #fffdf9;
-      --wine: #5b3a30;
-      --gold: #b79a68;
-      --gold-pale: #eadfc8;
-      --line: #e8dcc8;
+      color-scheme: light;
+      --ink: #252b35;
+      --muted: #68717d;
+      --paper: #f1f0ec;
+      --panel: #fffefa;
+      --navy: #172941;
+      --navy-soft: #263d59;
+      --gold: #a88b55;
+      --gold-pale: #e7deca;
+      --line: #e2ded4;
     }
 
     * { box-sizing: border-box; }
@@ -23,7 +26,7 @@
       margin: 0;
       padding: 1px 1rem;
       color: var(--ink);
-      background: radial-gradient(circle at top, #f3ebdf 0%, #f8f3eb 42%, #f3efe9 100%);
+      background: linear-gradient(145deg, #e9e9e5 0%, #f5f4f0 48%, #e8e8e4 100%);
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.8;
       font-size: 1.05rem;
@@ -36,14 +39,14 @@
       padding: clamp(1.3rem, 4vw, 3rem);
       background: var(--panel);
       border: 1px solid var(--line);
-      box-shadow: 0 24px 70px rgba(41, 30, 21, 0.08);
+      box-shadow: 0 24px 70px rgba(24, 35, 49, 0.12);
     }
 
     .page-auteur::before {
       content: "";
       position: absolute;
       inset: 10px;
-      border: 1px solid rgba(183, 154, 104, 0.4);
+      border: 1px solid rgba(168, 139, 85, 0.38);
       pointer-events: none;
     }
 
@@ -69,7 +72,7 @@
 
     h1 {
       margin: 0;
-      color: var(--wine);
+      color: var(--navy);
       font-size: clamp(2.2rem, 6vw, 4rem);
       font-weight: 400;
       letter-spacing: -0.04em;
@@ -89,16 +92,20 @@
       text-align: center;
     }
 
+    .portrait a {
+      display: inline-block;
+      padding: 6px;
+      border: 1px solid var(--gold);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(24, 35, 49, 0.16);
+    }
+
     .portrait img {
       display: block;
       width: min(100%, 190px);
       height: auto;
-      margin: 0 auto;
-      padding: 6px;
-      border: 1px solid var(--gold);
-      background: #fff;
-      box-shadow: 0 12px 28px rgba(52, 39, 24, 0.12);
-      filter: sepia(10%);
+      background: #eee;
+      filter: grayscale(100%);
     }
 
     .intro {
@@ -134,17 +141,17 @@
       overflow: hidden;
       border: 1px solid var(--line);
       background: #fffefa;
-      box-shadow: 0 4px 12px rgba(52, 39, 24, 0.03);
+      box-shadow: 0 4px 12px rgba(24, 35, 49, 0.04);
     }
 
     .volet summary {
       position: relative;
       padding: 1rem 3.5rem 1rem 1.2rem;
+      color: var(--navy);
+      background: linear-gradient(90deg, #f1f0eb, #fffefa 75%);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1.08rem;
       font-weight: 700;
-      color: var(--wine);
-      background: linear-gradient(90deg, #f5eee5, #fffefa 75%);
       cursor: pointer;
       list-style: none;
     }
@@ -157,16 +164,16 @@
       right: 1.2rem;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 1.5rem;
       color: var(--gold);
       font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.5rem;
     }
 
     .volet[open] summary::after { content: "−"; }
 
     .volet summary:hover,
     .volet summary:focus-visible {
-      background: #f2e6d7;
+      background: #e9e8e2;
       outline: 2px solid var(--gold);
       outline-offset: -2px;
     }
@@ -176,66 +183,42 @@
       border-top: 1px solid var(--line);
     }
 
-    .volet-contenu p {
-      margin: 0 0 1rem;
-    }
-
-    .volet-contenu p:last-child {
-      margin-bottom: 0;
-    }
+    .volet-contenu p { margin: 0 0 1rem; }
+    .volet-contenu p:last-child { margin-bottom: 0; }
 
     h2 {
       margin: 0 0 0.6rem;
-      color: var(--wine);
+      color: var(--navy);
       font-size: 1.14rem;
       font-weight: 600;
     }
 
-    ul {
-      margin: 0;
-      padding-left: 1.5rem;
-    }
-
-    li {
-      padding: 0.15rem 0;
-    }
+    ul { margin: 0; padding-left: 1.5rem; }
+    li { padding: 0.15rem 0; }
 
     .citation {
       margin: 0 0 1.5rem;
       padding: 1rem 1.2rem;
       border-left: 2px solid var(--gold);
-      background: #faf5ef;
+      background: #f5f4ef;
     }
 
-    .citation:last-child {
-      margin-bottom: 0;
-    }
-
-    .citation p {
-      margin: 0 0 0.8rem;
-    }
-
-    .citation p:last-child {
-      margin-bottom: 0;
-    }
+    .citation:last-child { margin-bottom: 0; }
+    .citation p { margin: 0 0 0.8rem; }
+    .citation p:last-child { margin-bottom: 0; }
 
     .attribution {
       color: var(--muted);
-      font-style: italic;
       font-size: 0.92rem;
+      font-style: italic;
     }
 
     @media (max-width: 620px) {
       body { padding: 1px 0.5rem; }
       .page-auteur { margin: 1rem auto; padding: 1.1rem; }
       .page-auteur::before { inset: 7px; }
-      .entete {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .portrait img {
-        width: 160px;
-      }
+      .entete { grid-template-columns: 1fr; text-align: center; }
+      .portrait img { width: 160px; }
     }
   </style>
 </head>
@@ -249,12 +232,15 @@
       </div>
 
       <figure class="portrait">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/0/03/ArthurPink.jpg"
-          alt="Portrait d'Arthur W. Pink"
-          width="295"
-          height="343"
-          loading="lazy">
+        <a href="https://commons.wikimedia.org/wiki/File:ArthurPink.jpg" target="_blank" rel="noopener noreferrer" aria-label="Voir le portrait d'Arthur W. Pink sur Wikimedia Commons">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/1/12/ArthurPink.jpg"
+            alt="Portrait d'Arthur W. Pink"
+            width="295"
+            height="343"
+            loading="eager"
+            decoding="async">
+        </a>
       </figure>
     </header>
 
@@ -267,11 +253,11 @@
     <details class="volet" open>
       <summary>Biographie</summary>
       <div class="volet-contenu">
-        <p>Arthur Walkington Pink était un pasteur et auteur britannique dont les écrits ont profondément marqué de nombreux croyants à travers le monde. Né à Nottingham, en Angleterre, il se convertit au christianisme alors qu'il est encore jeune adulte et ressent rapidement un profond désir de connaître les Écritures et de les faire connaître.</p>
+        <p>Arthur Walkington Pink était un pasteur et auteur britannique dont les écrits ont profondément marqué de nombreux croyants à travers le monde. Né à Nottingham, en Angleterre, il se convertit au christianisme alors qu'il était encore jeune adulte et ressent rapidement un profond désir de connaître les Écritures et de les faire connaître.</p>
         <p>Au cours de sa vie, Pink exerça un ministère en Grande-Bretagne, aux États-Unis et en Australie. Convaincu que l'Église de son époque s'éloignait de nombreuses vérités fondamentales de la foi chrétienne, il consacra une grande partie de son énergie à expliquer les doctrines bibliques avec clarté et profondeur.</p>
         <p>Dans les dernières années de sa vie, il vécut de manière relativement retirée sur l'île de Lewis, en Écosse. C'est là qu'il poursuivit son étude assidue de la Bible et la rédaction d'articles destinés à sa revue mensuelle <em>Studies in the Scriptures</em>.</p>
         <p>Parmi ses ouvrages les plus connus figurent <em>La souveraineté de Dieu</em>, <em>Les attributs de Dieu</em>, <em>L'exposition de l'Évangile selon Jean</em> et de nombreux commentaires bibliques. Ses écrits mettent particulièrement l'accent sur la grandeur de Dieu, la souveraineté divine dans le salut, l'autorité des Écritures et la nécessité d'une vie chrétienne marquée par la sainteté.</p>
-        <p>De son vivant, son ministère demeura relativement discret. Pourtant, après sa mort en 1952, ses livres furent largement diffusés et traduits dans de nombreuses langues. Aujourd'hui encore, Arthur W. Pink est considéré comme l'un des auteurs évangéliques réformés les plus lus du XX<sup>e</sup> siècle et ses ouvrages continuent d'encourager ceux qui désirent approfondir leur connaissance de Dieu et de sa Parole.</p>
+        <p>De son vivant, son ministère demeura relativement discret. Pourtant, après sa mort en 1952, ses livres furent largement diffusés et traduits dans de nombreuses langues. Aujourd'hui encore, Arthur W. Pink est considéré comme l'un des auteurs évangéliques réformés les plus lus du XX<sup>e</sup> siècle.</p>
       </div>
     </details>
 
@@ -305,7 +291,7 @@
       <div class="volet-contenu">
         <blockquote class="citation">
           <p>« Nous savons, du reste, que toutes choses concourent au bien de ceux qui aiment Dieu, de ceux qui sont appelés selon son dessein. » (Romains 8:28)</p>
-          <p>Quel Être glorieux que ce Dieu capable de faire concourir toutes choses de cette manière ! Car c'est en quantité impressionnante que le mal s'agite sans cesse sur cette terre. Une vaste armée de rebelles lutte contre Dieu. Mais au-dessus de tout cela, il y a DIEU qui maîtrise parfaitement la situation avec un calme absolu. Du trône de sa majesté suprême, imperturbable, il opère toutes choses d'après le conseil de sa volonté (Éphésiens 1:11). Tenez-vous donc dans une crainte respectueuse devant celui pour qui « les nations sont comme un rien, elles ne sont pour lui que néant et vanité » (Ésaïe 40:17). Prosternez-vous devant celui « dont la demeure est éternelle » (Ésaïe 57:15) et adorez-le. Faites monter vos louanges vers celui qui peut faire sortir le plus grand bien du mal le plus atroce.</p>
+          <p>Quel Être glorieux que ce Dieu capable de faire concourir toutes choses de cette manière ! Car c'est en quantité impressionnante que le mal s'agite sans cesse sur cette terre. Une vaste armée de rebelles lutte contre Dieu. Mais au-dessus de tout cela, il y a DIEU qui maîtrise parfaitement la situation avec un calme absolu.</p>
           <cite class="attribution">A. W. Pink</cite>
         </blockquote>
 
@@ -313,7 +299,7 @@
         <blockquote class="citation">
           <p>Son amour est si grand que Christ n'a pas craint le mépris et le rejet des hommes, il n'a pas reculé devant les crachats et les coups. Mesurez combien cet amour a été éprouvé et malmené par les réactions inamicales des disciples même les plus privilégiés.</p>
           <p>Lorsque la coupe amère s'approcha de ses lèvres et que son agonie atteignit une telle intensité que des gouttes de sang se mêlaient à sa sueur dans le jardin de Gethsémané, ses apôtres furent incapables de veiller avec lui une heure seulement.</p>
-          <p>Quand ses adversaires vinrent l'arrêter, « tous les disciples l'abandonnèrent et prirent la fuite » (Matthieu 26:56). Vous et moi, ami lecteur, aurions fait de même. Une ingratitude aussi vile a-t-elle refroidi l'amour du Sauveur pour ses disciples, l'a-t-elle incité à les abandonner à leur triste sort ? Loin de là ! « Ayant aimé les siens qui étaient dans le monde, il mit le comble à son amour pour eux » (Jean 13:1).</p>
+          <p>Quand ses adversaires vinrent l'arrêter, « tous les disciples l'abandonnèrent et prirent la fuite » (Matthieu 26:56). Vous et moi, ami lecteur, aurions fait de même. Une ingratitude aussi vile a-t-elle refroidi l'amour du Sauveur pour ses disciples ?</p>
           <cite class="attribution">A. W. Pink</cite>
         </blockquote>
       </div>
