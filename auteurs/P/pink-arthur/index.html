@@ -25,7 +25,7 @@
     }
 
     main.page-auteur {
-      max-width: 820px;
+      max-width: 920px;
       margin: 2.5rem auto;
       padding: 2rem 1.5rem 3rem;
       background: var(--card);
@@ -47,10 +47,9 @@
     }
 
     h2 {
-      font-size: 1.35rem;
+      font-size: 1.2rem;
       color: var(--accent);
-      margin-top: 2rem;
-      margin-bottom: 0.8rem;
+      margin: 0 0 0.8rem;
     }
 
     p {
@@ -59,20 +58,22 @@
     }
 
     .portrait {
-      margin: 1.5rem auto;
+      margin: 1.5rem auto 1rem;
       text-align: center;
     }
 
     .portrait img {
       display: block;
-      width: min(100%, 210px);
+      width: min(100%, 220px);
       height: auto;
       margin: 0 auto;
       border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
 
     .portrait figcaption {
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
       color: var(--muted);
       font-size: 0.9rem;
     }
@@ -80,15 +81,71 @@
     .intro {
       font-size: 1.08rem;
       color: var(--muted);
+      margin-bottom: 1.4rem;
     }
 
-    ul {
-      margin: 0.5rem 0 1.2rem 1.2rem;
-      padding-left: 1rem;
+    .volet {
+      margin: 1rem 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
     }
 
-    li {
-      margin-bottom: 0.45rem;
+    .volet summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: linear-gradient(to right, var(--accent-soft), #fff);
+      position: relative;
+    }
+
+    .volet summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .volet summary::after {
+      content: "+";
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .volet[open] summary::after {
+      content: "−";
+    }
+
+    .volet summary:hover,
+    .volet summary:focus-visible {
+      background: #f9eae4;
+      outline: none;
+    }
+
+    .volet-contenu {
+      padding: 1.1rem 1.2rem 1.2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .volet-contenu p:last-child {
+      margin-bottom: 0;
+    }
+
+    blockquote {
+      margin: 0.5rem 0 1rem;
+      padding: 0.8rem 1rem;
+      border-left: 4px solid var(--accent);
+      background: #faf5f2;
+      color: var(--text);
+      font-style: italic;
     }
 
     .note {
@@ -101,48 +158,55 @@
 </head>
 <body>
   <main class="page-auteur">
-    <h1>Arthur W. Pink</h1>
+    <h1>Arthur Pink</h1>
 
     <figure class="portrait">
       <img src="https://commons.wikimedia.org/wiki/Special:FilePath/ArthurPink.jpg" alt="Portrait en noir et blanc d’Arthur Pink" loading="lazy">
-      <figcaption>
+      <figcaption>Arthur Pink</figcaption>
+    </figure>
 
     <p class="intro">
-      Présentation de l’auteur. Complétez ici la biographie, les dates, les références ou le contexte historique.
+      Biographie, livres, articles et citations autour de l’œuvre d’Arthur Pink.
     </p>
 
-    <section>
-      <h2>Biographie</h2>
-      <p>
-        Arthur Pink est une figure littéraire et intellectuelle dont l’œuvre mérite d’être présentée dans son contexte.
-        Cette page peut accueillir une courte biographie, une synthèse de sa trajectoire et les éléments essentiels
-        de son parcours.
-      </p>
-      <p>
-        Vous pouvez ici préciser ses activités, ses centres d’intérêt, ses publications ou l’importance de son héritage.
-        Le texte peut être enrichi avec des références fiables et des dates précises.
-      </p>
-    </section>
+    <details class="volet" open>
+      <summary>Biographie</summary>
+      <div class="volet-contenu">
+        <p>Arthur W. Pink (1886–1952) est un auteur et prédicateur protestant britannique, surtout connu pour ses écrits spirituels et théologiques.</p>
+        <p>Il a publié de nombreux ouvrages abordant la foi chrétienne, la sanctification, la prière et l’étude biblique, avec une forte attention à la doctrine et à la vie intérieure.</p>
+      </div>
+    </details>
 
-    <section>
-      <h2>Œuvres</h2>
-      <ul>
-        <li>Ajouter le titre d’une œuvre majeure.</li>
-        <li>Ajouter une deuxième référence bibliographique.</li>
-        <li>Ajouter un court commentaire ou une synthèse.</li>
-      </ul>
-    </section>
+    <details class="volet">
+      <summary>Livre</summary>
+      <div class="volet-contenu">
+        <h2>The Sovereignty of God</h2>
+        <p>Un ouvrage majeur qui explore le thème de la souveraineté divine et son importance dans la vie chrétienne et la compréhension de la providence.</p>
+        <p><strong>Référence :</strong> Arthur W. Pink, <em>The Sovereignty of God</em> (édition à compléter selon la source retenue).</p>
+      </div>
+    </details>
 
-    <section>
-      <h2>Étude et influence</h2>
-      <p>
-        Cette section permet de mettre en lumière le rôle de l’auteur dans son domaine, ainsi que son influence sur
-        les lectures, les idées ou la pensée contemporaine. Vous pouvez développer ici les thèmes principaux de son travail.
-      </p>
-    </section>
+    <details class="volet">
+      <summary>Article</summary>
+      <div class="volet-contenu">
+        <h2>Étude sur la sanctification</h2>
+        <p>Les articles de Pink sont souvent centrés sur la doctrine, la méditation biblique et la vie spirituelle. Ils mettent en rapport la foi, la prière et l’obéissance chrétienne.</p>
+        <p><strong>Source :</strong> À compléter selon l’article ou la collection consultée.</p>
+      </div>
+    </details>
+
+    <details class="volet">
+      <summary>Citation</summary>
+      <div class="volet-contenu">
+        <blockquote>
+          « Tout ce que nous sommes et tout ce que nous avons vient de la grâce de Dieu. »
+        </blockquote>
+        <p><strong>Référence :</strong> Citation à vérifier et à attribuer à l’ouvrage exact de Arthur W. Pink.</p>
+      </div>
+    </details>
 
     <div class="note">
-      Remplacez les textes d’exemple par des informations exactes, vérifiées et adaptées au site.
+      Remplacez les éléments d’exemple par des informations vérifiées et complètes selon les sources conservées dans le projet.
     </div>
   </main>
 </body>
