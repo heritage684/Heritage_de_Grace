@@ -16,20 +16,26 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
 a { color: inherit; text-decoration: none; }
-.site-header { height: 82px; padding: 0 8%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.site-header { min-height: 86px; padding: 14px 8%; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); background: rgba(251, 250, 246, .97); }
 .brand { display: inline-flex; gap: 11px; align-items: center; font-family: var(--serif); font-size: 19px; font-weight: 600; }
 .brand em { color: var(--green); font-weight: 500; }
 .brand-mark { color: var(--gold); font-size: 22px; }
-nav { display: flex; gap: 34px; color: #53625c; font-size: 13px; }
-nav a:hover, footer a:hover { color: var(--gold); }
+nav { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 9px; color: var(--ink); font-size: 14px; }
+nav a { display: inline-flex; align-items: center; min-height: 42px; padding: 10px 17px; border: 1px solid #d8ded8; border-radius: 6px; background: #fff; font-weight: 700; transition: background .2s, color .2s, border-color .2s, transform .2s; }
+nav a:hover, nav a:focus-visible { color: #fff; background: var(--green); border-color: var(--green); transform: translateY(-1px); outline: none; }
+nav a[aria-current="page"] { color: #fff; background: var(--green); border-color: var(--green); }
+footer a:hover { color: var(--gold); }
 .hero { min-height: 570px; padding: 114px 10% 70px; text-align: center; background: radial-gradient(ellipse at 50% 20%, #f1eee4 0%, var(--paper) 63%); }
 .eyebrow { margin: 0 0 18px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
 h1 { margin: 0; font-size: clamp(38px, 5.2vw, 65px); line-height: 1.15; letter-spacing: -.035em; }
 h1 em { color: var(--green); font-weight: 500; }
 .hero-copy { max-width: 555px; margin: 23px auto 28px; color: var(--muted); font-size: 15px; line-height: 1.8; }
-.button { display: inline-flex; gap: 18px; align-items: center; padding: 14px 21px; background: var(--green); color: white; font-size: 12px; transition: background .2s; }
+.button { display: inline-flex; gap: 18px; align-items: center; padding: 14px 21px; border: 1px solid var(--green); border-radius: 5px; background: var(--green); color: white; font-size: 13px; font-weight: 700; transition: background .2s; }
 .button:hover { background: #243f34; }
+.button-secondary { background: #fff; color: var(--green); }
+.button-secondary:hover { color: #fff; }
+.section-action { margin: 28px 0 0; }
 .hero-note { margin-top: 37px; color: #89938b; font-size: 11px; }
 .hero-note span { padding-right: 7px; color: var(--gold); }
 .section { padding: 88px 10% 100px; background: #fff; }
@@ -40,7 +46,7 @@ h2 { margin: 0; font-size: clamp(30px, 3.5vw, 42px); letter-spacing: -.025em; }
 .search { width: 100%; padding: 12px 2px; border: 0; border-bottom: 1px solid #c9cec7; outline: 0; background: transparent; color: var(--ink); font: 12px var(--sans); }
 .search:focus { border-color: var(--green); }
 .filters { display: flex; gap: 8px; margin: 30px 0; flex-wrap: wrap; }
-.filter { padding: 9px 14px; border: 1px solid var(--line); border-radius: 2px; background: #fff; color: var(--muted); font: 11px var(--sans); cursor: pointer; }
+.filter { padding: 9px 14px; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--muted); font: 12px var(--sans); cursor: pointer; }
 .filter:hover, .filter.active { border-color: var(--green); background: var(--green); color: white; }
 .book-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .book-card { min-height: 275px; padding: 25px 24px; border: 1px solid var(--line); background: var(--paper); transition: transform .2s, box-shadow .2s; }
@@ -50,15 +56,15 @@ h2 { margin: 0; font-size: clamp(30px, 3.5vw, 42px); letter-spacing: -.025em; }
 .book-card h3 { margin: 28px 0 9px; font-size: 23px; }
 .card-description { min-height: 43px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .card-meta { margin: 17px 0; color: #929991; font-size: 10px; }
-.text-link { color: var(--green); font-size: 11px; font-weight: 600; }
+.text-link { color: var(--green); font-size: 12px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .text-link span { padding-left: 5px; }
 .no-results { padding: 24px 0; color: var(--muted); font-size: 14px; }
 .topics { padding: 78px 10% 88px; text-align: center; }
 .topics h2 { margin-bottom: 34px; }
 .topic-list { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
-.topic-list a { min-width: 155px; padding: 16px 18px; border: 1px solid var(--line); background: #fff; font-family: var(--serif); font-size: 17px; }
+.topic-list a { min-width: 155px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 5px; background: #fff; font-family: var(--serif); font-size: 17px; }
 .topic-list a span { padding-left: 15px; color: var(--gold); font: 12px var(--sans); }
-.topic-list a:hover { border-color: var(--gold); }
+.topic-list a:hover { border-color: var(--gold); box-shadow: 0 4px 14px #20352f0d; }
 .about { display: grid; grid-template-columns: 45px 1fr 1.15fr; align-items: center; gap: 22px; padding: 70px 10%; background: #f0efe7; }
 .about-symbol { align-self: start; color: var(--gold); font-size: 27px; }
 .about h2 { font-size: 34px; }
@@ -67,8 +73,10 @@ footer { min-height: 100px; padding: 25px 8%; display: flex; align-items: center
 .footer-brand { font-size: 16px; }
 footer p, footer > a:last-child { color: var(--muted); font-size: 10px; }
 @media (max-width: 760px) {
-  .site-header { height: auto; min-height: 72px; padding: 15px 6%; flex-wrap: wrap; gap: 12px; }
-  nav { gap: 17px; font-size: 11px; }
+  .site-header { min-height: 72px; padding: 14px 6%; flex-direction: column; align-items: stretch; gap: 13px; }
+  .brand { justify-content: center; }
+  nav { justify-content: center; gap: 7px; }
+  nav a { min-height: 40px; padding: 9px 12px; font-size: 13px; }
   .hero { min-height: 510px; padding: 100px 7% 60px; }
   .section { padding: 68px 7%; }
   .section-heading { grid-template-columns: 1fr; }

@@ -12,7 +12,7 @@
     .author-group { border: 1px solid var(--line); background: #fff; padding: 20px 18px; }
     .author-group h3 { margin: 0 0 16px; color: var(--green); font-size: 28px; }
     .author-links { display: grid; gap: 10px; }
-    .author-links a { color: var(--ink); font-size: 14px; }
+    .author-links a { color: var(--ink); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
     .author-links a:hover { color: var(--gold); }
     @media (max-width: 760px) {
       .author-index-page { padding: 48px 7% 80px; }
@@ -26,9 +26,10 @@
       <span>Héritage <em>de Grâce</em></span>
     </a>
     <nav aria-label="Navigation principale">
-      <a href="../index.html#lectures">Lectures</a>
-      <a href="../index.html#themes">Thèmes</a>
-      <a href="../index.html#apropos">À propos</a>
+      <a href="../index.html">Accueil</a>
+      <a href="../livres/">Livres</a>
+      <a href="./" aria-current="page">Auteurs</a>
+      <a href="../themes/">Thèmes</a>
     </nav>
   </header>
 
@@ -57,90 +58,18 @@
       </div>
 
       <div class="author-groups">
-        <div class="author-group" id="A">
-          <h3>A</h3>
-          <div class="author-links">
-            <a href="A/Augustin/index.html">Augustin</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="B">
-          <h3>B</h3>
-          <div class="author-links">
-            <a href="B/bunyan-john/index.html">John Bunyan</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="C">
-          <h3>C</h3>
-          <div class="author-links">
-            <a href="C/calvin-jean/index.html">Jean Calvin</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="D">
-          <h3>D</h3>
-          <div class="author-links">
-            <a href="D/downame-john/index.html">John Downame</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="E">
-          <h3>E</h3>
-          <div class="author-links">
-            <a href="E/edwards-jonathan/index.html">Jonathan Edwards</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="H">
-          <h3>H</h3>
-          <div class="author-links">
-            <a href="H/henry-matthew/index.html">Matthew Henry</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="J">
-          <h3>J</h3>
-          <div class="author-links">
-            <a href="J/james-john-angell/index.html">John Angell James</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="N">
-          <h3>N</h3>
-          <div class="author-links">
-            <a href="N/newton-john/index.html">John Newton</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="O">
-          <h3>O</h3>
-          <div class="author-links">
-            <a href="O/owen-john/index.html">John Owen</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="P">
-          <h3>P</h3>
-          <div class="author-links">
-            <a href="P/pink-arthur/index.html">Arthur W. Pink</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="R">
-          <h3>R</h3>
-          <div class="author-links">
-            <a href="R/ryle-j-c/index.html">J. C. Ryle</a>
-          </div>
-        </div>
-
-        <div class="author-group" id="W">
-          <h3>W</h3>
-          <div class="author-links">
-            <a href="W/watson-thomas/index.html">Thomas Watson</a>
-            <a href="W/winslow-octavius/index.html">Octavius Winslow</a>
-          </div>
-        </div>
+        <div class="author-group" id="A"><h3>A</h3><div class="author-links"><a href="A/Augustin/index.html">Augustin</a></div></div>
+        <div class="author-group" id="B"><h3>B</h3><div class="author-links"><a href="B/bunyan-john/index.html">John Bunyan</a></div></div>
+        <div class="author-group" id="C"><h3>C</h3><div class="author-links"><a href="C/calvin-jean/index.html">Jean Calvin</a></div></div>
+        <div class="author-group" id="D"><h3>D</h3><div class="author-links"><a href="D/downame-john/index.html">John Downame</a></div></div>
+        <div class="author-group" id="E"><h3>E</h3><div class="author-links"><a href="E/edwards-jonathan/index.html">Jonathan Edwards</a></div></div>
+        <div class="author-group" id="H"><h3>H</h3><div class="author-links"><a href="H/henry-matthew/index.html">Matthew Henry</a></div></div>
+        <div class="author-group" id="J"><h3>J</h3><div class="author-links"><a href="J/james-john-angell/index.html">John Angell James</a></div></div>
+        <div class="author-group" id="N"><h3>N</h3><div class="author-links"><a href="N/newton-john/index.html">John Newton</a></div></div>
+        <div class="author-group" id="O"><h3>O</h3><div class="author-links"><a href="O/owen-john/index.html">John Owen</a></div></div>
+        <div class="author-group" id="P"><h3>P</h3><div class="author-links"><a href="P/pink-arthur/index.html">Arthur W. Pink</a></div></div>
+        <div class="author-group" id="R"><h3>R</h3><div class="author-links"><a href="R/ryle-j-c/index.html">J. C. Ryle</a></div></div>
+        <div class="author-group" id="W"><h3>W</h3><div class="author-links"><a href="W/watson-thomas/index.html">Thomas Watson</a><a href="W/winslow-octavius/index.html">Octavius Winslow</a></div></div>
       </div>
     </section>
   </main>
