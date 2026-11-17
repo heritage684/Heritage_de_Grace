@@ -45,6 +45,7 @@ body {
   font-family: var(--serif);
   font-size: 19px;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .brand em {
@@ -79,6 +80,7 @@ nav a {
   color: var(--ink);
   font-family: var(--sans);
   font-weight: 700;
+  text-decoration: none;
   transition: background .2s ease, transform .2s ease, border-color .2s ease, color .2s ease;
 }
 
@@ -89,6 +91,7 @@ nav a:focus-visible {
   border-color: var(--navy);
   transform: translateY(-1px);
   outline: none;
+  text-decoration: none;
 }
 
 .page-auteur {
