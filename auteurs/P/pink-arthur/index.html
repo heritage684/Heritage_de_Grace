@@ -18,18 +18,78 @@
       --gold: #a88b55;
       --gold-pale: #e7deca;
       --line: #e2ded4;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      padding: 1px 1rem;
+      padding: 0;
       color: var(--ink);
       background: linear-gradient(145deg, #e9e9e5 0%, #f5f4f0 48%, #e8e8e4 100%);
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.8;
       font-size: 1.05rem;
+    }
+
+    .site-header {
+      min-height: 86px;
+      padding: 14px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(4px);
+    }
+
+    .brand {
+      display: inline-flex;
+      gap: 11px;
+      align-items: center;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .brand em { color: var(--navy); font-weight: 500; font-style: normal; }
+    .brand-mark { color: var(--gold); font-size: 22px; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 9px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 10px 17px;
+      border: 1px solid #d8ded8;
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 700;
+      transition: background .2s ease, transform .2s ease, border-color .2s ease, color .2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: #fff;
+      background: var(--navy);
+      border-color: var(--navy);
+      transform: translateY(-1px);
+      outline: none;
     }
 
     .page-auteur {
@@ -229,8 +289,15 @@
       text-decoration: underline;
     }
 
+    @media (max-width: 760px) {
+      .site-header { min-height: 72px; padding: 14px 6%; flex-direction: column; align-items: stretch; gap: 13px; }
+      .brand { justify-content: center; }
+      nav { justify-content: center; gap: 7px; }
+      nav a { min-height: 40px; padding: 9px 12px; font-size: 13px; }
+    }
+
     @media (max-width: 620px) {
-      body { padding: 1px 0.5rem; }
+      body { padding: 0; }
       .page-auteur { margin: 1rem auto; padding: 1.1rem; }
       .page-auteur::before { inset: 7px; }
       .entete { grid-template-columns: 1fr; text-align: center; }
@@ -239,6 +306,19 @@
   </style>
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html" aria-label="Héritage de Grâce, accueil">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>Héritage <em>de Grâce</em></span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="../../../index.html">Accueil</a>
+      <a href="../../../%C3%A0%20propos/">À propos</a>
+      <a href="../../../livres/">Livres</a>
+      <a href="../../">Auteurs</a>
+      <a href="../../../themes/">Thèmes</a>
+    </nav>
+  </header>
   <main class="page-auteur">
     <header class="entete">
       <div>
@@ -260,7 +340,6 @@
       </figure>
     </header>
 
-
     <div class="ornement" aria-hidden="true">✦</div>
 
     <details class="volet" open>
@@ -268,8 +347,8 @@
       <div class="volet-contenu">
         <p>Arthur Walkington Pink était un pasteur et auteur britannique dont les écrits ont profondément marqué de nombreux croyants à travers le monde. Né à Nottingham, en Angleterre, il se convertit au christianisme alors qu'il était encore jeune et développa rapidement un profond intérêt pour les Écritures, la doctrine de la grâce et la vie intérieure.</p>
         <p>Au cours de sa vie, Pink exerça un ministère en Grande-Bretagne, aux États-Unis et en Australie. Convaincu que l'Église de son époque s'éloignait de nombreuses vérités fondamentales, il consacra une grande partie de son énergie à expliquer les doctrines bibliques avec clarté et profondeur.</p>
-        <p>Dans les dernières années de sa vie, il vécut de manière relativement retirée sur l'île de Lewis, en Écosse. C'est là qu'il poursuivit son étude assidue de la Bible et la rédaction d'articles destinés à ses lecteurs.</p>
-        <p>Parmi ses ouvrages les plus connus figurent <em>La souveraineté de Dieu</em>, <em>Les attributs de Dieu</em>, <em>L'exposition de l'Évangile selon Jean</em> et de nombreux commentaires bibliques. Ses écrits mettent particulièrement l'accent sur la grandeur de Dieu, la souveraineté divine dans le salut et l'autorité des Écritures.</p>
+        <p>Dans les dernières années de sa vie, il vécut de manière relativement retirée sur l'île de Lewis, en Écosse. C'est là qu'il poursuivit son étude assidue de la Bible et la rédaction de ses ouvrages les plus connus.</p>
+        <p>Parmi ses ouvrages les plus connus figurent <em>La souveraineté de Dieu</em>, <em>Les attributs de Dieu</em>, <em>L'exposition de l'Évangile selon Jean</em> et de nombreux commentaires et traités sur la sanctification et la vie chrétienne.</p>
         <p>De son vivant, son ministère demeura relativement discret. Pourtant, après sa mort en 1952, ses livres furent largement diffusés et traduits dans de nombreuses langues. Aujourd'hui encore, Arthur W. Pink est considéré comme l'un des auteurs chrétiens les plus influents du XXe siècle.</p>
       </div>
     </details>
@@ -304,15 +383,14 @@
       <div class="volet-contenu">
         <blockquote class="citation">
           <p>« Nous savons, du reste, que toutes choses concourent au bien de ceux qui aiment Dieu, de ceux qui sont appelés selon son dessein. » (Romains 8:28)</p>
-          <p>Quel Être glorieux que ce Dieu capable de faire concourir toutes choses de cette manière ! Car c'est en quantité impressionnante que le mal s'agite sans cesse sur cette terre. Une personne aurait du mal à concevoir que le Seigneur puisse faire quelque chose de bien à partir de choses si mauvaises. Pourtant, c'est précisément ce que Dieu fait dans la vie de ses enfants.</p>
+          <p>Quel Être glorieux que ce Dieu capable de faire concourir toutes choses de cette manière ! Car c'est en quantité impressionnante que le mal s'agite sans cesse sur cette terre. Une fois que nous comprenons la souveraineté de Dieu, nous savons que même les événements les plus difficiles sont saisis par sa main juste et bienveillante.</p>
           <cite class="attribution">A. W. Pink</cite>
         </blockquote>
 
         <h2>L'Amour inébranlable de Jésus</h2>
         <blockquote class="citation">
-          <p>Son amour est si grand que Christ n'a pas craint le mépris et le rejet des hommes, il n'a pas reculé devant les crachats et les coups. Mesurez combien cet amour a été éprouvé et quelle profondeur de fidélité il révèle.</p>
-          <p>Lorsque la coupe amère s'approcha de ses lèvres et que son agonie atteignit une telle intensité que des gouttes de sang se mêlaient à sa sueur dans le jardin de Gethsémanié, ses disciples s'étaient enfuis. Il lutta seul, mais il alla jusqu'au bout pour nous sauver.</p>
-          <p>Quand ses adversaires vinrent l'arrêter, « tous les disciples l'abandonnèrent et prirent la fuite » (Matthieu 26:56). Vous et moi, ami lecteur, aurions fait de même. Une ingrati­tu­de profonde y a aussi sa place.</p>
+          <p>Son amour est si grand que Christ n'a pas craint le mépris et le rejet des hommes, il n'a pas reculé devant les crachats et les coups. Mesurez combien cet amour a été éprouvé lorsque, dans le jardin de Gethsémani, Il sut qu'il devait porter notre péché et notre honte.</p>
+          <p>Lorsque la coupe amère s'approcha de ses lèvres et que son agonie atteignit une telle intensité que des gouttes de sang se mêlaient à sa sueur dans le jardin de Gethsémani, son cœur ne fut pas ébranlé par l'angoisse. Il allait jusqu'au bout pour nous.</p>
           <cite class="attribution">A. W. Pink</cite>
         </blockquote>
       </div>
