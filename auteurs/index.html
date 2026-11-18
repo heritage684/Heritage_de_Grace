@@ -7,38 +7,26 @@
   <title>Auteurs — Héritage de Grâce</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .author-index-page { padding: 64px 10% 100px; }
-    .author-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 22px 26px; margin-top: 28px; }
-    .author-group { border: 1px solid var(--line); background: #fff; padding: 20px 18px; }
-    .author-group h3 { margin: 0 0 16px; color: var(--green); font-size: 28px; }
-    .author-links { display: grid; gap: 10px; }
-    .author-links a { color: var(--ink); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
-    .author-links a:hover { color: var(--gold); }
-    @media (max-width: 760px) {
-      .author-index-page { padding: 48px 7% 80px; }
-    }
+    .author-index-page { padding:64px 10% 100px; }
+    .author-groups { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:22px 26px; margin-top:28px; }
+    .author-group { border:1px solid var(--line); background:#fff; padding:20px 18px; }
+    .author-group h3 { margin:0 0 16px; color:var(--green); font-size:28px; }
+    .author-links { display:grid; gap:10px; }.author-links a { color:var(--ink); font-size:14px; text-decoration:underline; text-underline-offset:3px; }.author-links a:hover { color:var(--gold); }
+    @media (max-width:760px) { .author-index-page { padding:48px 7% 80px; } }
   </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="../index.html" aria-label="Héritage de Grâce, accueil">
-      <span class="brand-mark" aria-hidden="true">✦</span>
-      <span>Héritage <em>de Grâce</em></span>
-    </a>
-    <nav aria-label="Navigation principale">
-      <a href="../index.html">Accueil</a>
-      <a href="../livres/">Livres</a>
-      <a href="./" aria-current="page">Auteurs</a>
-      <a href="../themes/">Thèmes</a>
-    </nav>
+    <div class="header-brand-search">
+      <a class="brand" href="../index.html" aria-label="Héritage de Grâce, accueil"><span class="brand-mark" aria-hidden="true">✦</span><span>Héritage <em>de Grâce</em></span></a>
+      <form class="header-search" action="../index.html#lectures" role="search"><label class="search-label" for="quick-search">Rechercher dans la bibliothèque</label><span class="search-icon" aria-hidden="true">⌕</span><input id="quick-search" name="q" type="search" placeholder="Rechercher…" autocomplete="off"></form>
+    </div>
+    <nav aria-label="Navigation principale"><a href="../index.html">Accueil</a><a href="../livres/">Livres</a><a href="./" aria-current="page">Auteurs</a><a href="../themes/">Thèmes</a></nav>
   </header>
-
   <main class="author-index-page">
     <section class="section">
       <div class="section-heading"><div><p class="eyebrow">Bibliothèque</p><h2>Auteurs</h2></div></div>
-      <div class="topic-list" aria-label="Navigation par lettre" style="justify-content:flex-start; margin-top: 32px;">
-        <a href="#A">A<span>↗</span></a><a href="#B">B<span>↗</span></a><a href="#C">C<span>↗</span></a><a href="#D">D<span>↗</span></a><a href="#E">E<span>↗</span></a><a href="#H">H<span>↗</span></a><a href="#J">J<span>↗</span></a><a href="#N">N<span>↗</span></a><a href="#O">O<span>↗</span></a><a href="#P">P<span>↗</span></a><a href="#R">R<span>↗</span></a><a href="#W">W<span>↗</span></a>
-      </div>
+      <div class="topic-list" aria-label="Navigation par lettre" style="justify-content:flex-start;margin-top:32px"><a href="#A">A<span>↗</span></a><a href="#B">B<span>↗</span></a><a href="#C">C<span>↗</span></a><a href="#D">D<span>↗</span></a><a href="#E">E<span>↗</span></a><a href="#H">H<span>↗</span></a><a href="#J">J<span>↗</span></a><a href="#N">N<span>↗</span></a><a href="#O">O<span>↗</span></a><a href="#P">P<span>↗</span></a><a href="#R">R<span>↗</span></a><a href="#W">W<span>↗</span></a></div>
       <div class="author-groups">
         <div class="author-group" id="A"><h3>A</h3><div class="author-links"><a href="A/Augustin/index.html">Augustin</a></div></div>
         <div class="author-group" id="B"><h3>B</h3><div class="author-links"><a href="B/bunyan-john/index.html">John Bunyan</a></div></div>
@@ -55,12 +43,6 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    <a class="brand footer-brand" href="../index.html"><span class="brand-mark" aria-hidden="true">✦</span><span>Héritage <em>de Grâce</em></span></a>
-    <p>Un projet en construction · Fait avec soin en France</p>
-    <a href="../%C3%A0%20propos/">À propos</a>
-    <a href="mailto:contact@example.com">Nous écrire</a>
-  </footer>
+  <footer><a class="brand footer-brand" href="../index.html"><span class="brand-mark" aria-hidden="true">✦</span><span>Héritage <em>de Grâce</em></span></a><p>Un projet en construction · Fait avec soin en France</p><a href="../%C3%A0%20propos/">À propos</a><a href="mailto:contact@example.com">Nous écrire</a></footer>
 </body>
 </html>
