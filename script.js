@@ -1,11 +1,14 @@
 const cards = [...document.querySelectorAll('.book-card')];
 const filters = [...document.querySelectorAll('.filter')];
-const search = document.querySelector('#search');
+const searches = [...document.querySelectorAll('input[type="search"]')];
 const noResults = document.querySelector('#no-results');
 let selectedCategory = 'all';
 
-function updateCards() {
-  const query = search.value.trim().toLocaleLowerCase('fr');
+function updateCards(source) {
+  const query = source.value.trim().toLocaleLowerCase('fr');
+  for (const search of searches) {
+    if (search !== source) search.value = source.value;
+  }
   let visibleCount = 0;
 
   for (const card of cards) {
@@ -16,7 +19,7 @@ function updateCards() {
     if (visible) visibleCount++;
   }
 
-  noResults.hidden = visibleCount > 0;
+  if (noResults) noResults.hidden = visibleCount > 0;
 }
 
 for (const button of filters) {
@@ -27,8 +30,16 @@ for (const button of filters) {
       filter.classList.toggle('active', isActive);
       filter.setAttribute('aria-pressed', String(isActive));
     }
-    updateCards();
+    updateCards(searches[0]);
   });
 }
 
-search.addEventListener('input', updateCards);
+for (const search of searches) {
+  search.addEventListener('input', () => updateCards(search));
+}
+
+const initialQuery = new URLSearchParams(window.location.search).get('q');
+if (initialQuery && searches.length) {
+  searches[0].value = initialQuery;
+  updateCards(searches[0]);
+}

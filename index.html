@@ -21,13 +21,26 @@
       <a href="auteurs/">Auteurs</a>
       <a href="themes/">Thèmes</a>
     </nav>
+    <form class="header-search" action="index.html#lectures" method="get" role="search">
+      <label class="search-label" for="quick-search">Rechercher dans la bibliothèque</label>
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input id="quick-search" class="search search-compact" type="search" placeholder="Rechercher…" autocomplete="off">
+    </form>
   </header>
   <main id="accueil">
     <section class="hero">
       <p class="eyebrow">Des trésors pour aujourd’hui</p>
       <h1>La richesse de l’Évangile,<br><em>transmise à travers les siècles.</em></h1>
       <p class="hero-copy">Découvrez des écrits chrétiens qui fortifient la foi, élèvent le regard vers Christ et accompagnent la vie quotidienne.</p>
-      <a class="button" href="livres/">Explorer les livres <span aria-hidden="true">↓</span></a>
+      <form class="hero-search" role="search" aria-label="Rechercher dans la bibliothèque">
+        <label for="search">Que souhaitez-vous découvrir ?</label>
+        <div class="hero-search-control">
+          <span aria-hidden="true">⌕</span>
+          <input id="search" class="search" type="search" placeholder="Titre, auteur, thème…" autocomplete="off">
+          <a class="button" href="#lectures">Explorer <span aria-hidden="true">→</span></a>
+        </div>
+        <small>Recherchez parmi les textes, auteurs et thèmes de la bibliothèque.</small>
+      </form>
       <div class="hero-note"><span aria-hidden="true">✧</span> Un projet francophone de littérature chrétienne réformée</div>
     </section>
 
@@ -37,14 +50,12 @@
           <p class="eyebrow">La bibliothèque</p>
           <h2>À lire et à méditer</h2>
         </div>
-        <label class="search-label" for="search">Rechercher un texte</label>
-        <input id="search" class="search" type="search" placeholder="Titre, auteur, thème…" autocomplete="off">
       </div>
       <div class="filters" aria-label="Filtrer par thème">
-        <button class="filter active" type="button" data-filter="all">Tout</button>
-        <button class="filter" type="button" data-filter="foi">Foi</button>
-        <button class="filter" type="button" data-filter="priere">Prière</button>
-        <button class="filter" type="button" data-filter="vie-chretienne">Vie chrétienne</button>
+        <button class="filter active" type="button" data-filter="all" aria-pressed="true">Tout</button>
+        <button class="filter" type="button" data-filter="foi" aria-pressed="false">Foi</button>
+        <button class="filter" type="button" data-filter="priere" aria-pressed="false">Prière</button>
+        <button class="filter" type="button" data-filter="vie-chretienne" aria-pressed="false">Vie chrétienne</button>
       </div>
       <div class="book-grid" id="book-grid">
         <article class="book-card" data-category="foi" data-search="la grâce de dieu foi évangile à compléter">
