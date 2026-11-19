@@ -56,60 +56,23 @@
     .page-nav button:disabled { opacity: .45; cursor: not-allowed; }
     .page-status { align-self: center; color: var(--muted); font-size: .84rem; text-align: center; }
     footer { display: none; }
-    @media (max-width: 900px) {
-      .reader-layout { grid-template-columns: 1fr; }
-      .toc { position: static; max-height: 110px; overflow: auto; padding: .65rem 1rem; }
-      .toc h2 { margin-bottom: .35rem; }
-      .toc ol { columns: 3; }
-      .book { height: calc(100dvh - 285px); min-height: 460px; }
-    }
-    @media (max-width: 560px) {
-      .topbar { align-items: flex-start; flex-direction: column; }
-      .topbar nav { flex-wrap: wrap; gap: 1rem; }
-      .reader-toolbar { align-items: flex-start; flex-direction: column; }
-      .tools { width: 100%; flex-wrap: wrap; }
-      .toc ol { columns: 2; }
-      .book { height: calc(100dvh - 320px); min-height: 410px; padding: .85rem; }
-      .chapter-copy { text-align: left; column-width: calc(100% - 1rem); column-gap: 1rem; }
-      .page-nav button { padding-inline: .55rem; font-size: .8rem; }
-    }
+    @media (max-width: 900px) { .reader-layout { grid-template-columns: 1fr; } .toc { position: static; max-height: 110px; overflow: auto; padding: .65rem 1rem; } .toc h2 { margin-bottom: .35rem; } .toc ol { columns: 3; } .book { height: calc(100dvh - 285px); min-height: 460px; } }
+    @media (max-width: 560px) { .topbar { align-items: flex-start; flex-direction: column; } .topbar nav { flex-wrap: wrap; gap: 1rem; } .reader-toolbar { align-items: flex-start; flex-direction: column; } .tools { width: 100%; flex-wrap: wrap; } .toc ol { columns: 2; } .book { height: calc(100dvh - 320px); min-height: 410px; padding: .85rem; } .chapter-copy { text-align: left; column-width: calc(100% - 1rem); column-gap: 1rem; } .page-nav button { padding-inline: .55rem; font-size: .8rem; } }
     @media (prefers-reduced-motion: reduce) { .chapter-copy { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="../../index.html">✦ Héritage de Grâce</a>
-    <nav aria-label="Navigation principale"><a href="../">Livres</a><a href="../../auteurs/">Auteurs</a><a href="../../%C3%A0%20propos/">À propos</a></nav>
-  </header>
+  <header class="topbar"><a class="brand" href="../../index.html">✦ Héritage de Grâce</a><nav aria-label="Navigation principale"><a href="../">Livres</a><a href="../../auteurs/">Auteurs</a><a href="../../%C3%A0%20propos/">À propos</a></nav></header>
   <p class="announcement">Une bibliothèque pour découvrir les richesses spirituelles des serviteurs de Dieu d’autrefois.</p>
-
-  <div class="reader-toolbar" aria-label="Outils de lecture">
-    <span class="book-label">Lecture en ligne · Arthur W. Pink</span>
-    <div class="tools">
-      <label class="book-label" for="chapter-select">Aller au chapitre</label>
-      <select id="chapter-select" aria-label="Choisir un chapitre"></select>
-      <button id="decrease-font" type="button" aria-label="Diminuer la taille du texte">A−</button>
-      <button id="increase-font" type="button" aria-label="Augmenter la taille du texte">A+</button>
-    </div>
-  </div>
+  <div class="reader-toolbar" aria-label="Outils de lecture"><span class="book-label">Lecture en ligne · Arthur W. Pink</span><div class="tools"><label class="book-label" for="chapter-select">Aller au chapitre</label><select id="chapter-select" aria-label="Choisir un chapitre"></select><button id="decrease-font" type="button" aria-label="Diminuer la taille du texte">A−</button><button id="increase-font" type="button" aria-label="Augmenter la taille du texte">A+</button></div></div>
   <div class="progress-wrap"><span>Progression</span><progress id="reading-progress" max="100" value="0">0%</progress><span id="progress-label">0 %</span></div>
-
   <main class="reader-layout">
-    <nav class="toc" aria-labelledby="toc-title">
-      <h2 id="toc-title">Table des matières</h2>
-      <ol id="toc-list"></ol>
-    </nav>
+    <nav class="toc" aria-labelledby="toc-title"><h2 id="toc-title">Table des matières</h2><ol id="toc-list"></ol></nav>
     <article class="book" aria-label="Lecteur du livre">
-      <header class="book-heading">
-        <p class="eyebrow">Lecture en ligne</p>
-        <h1>La souveraineté de Dieu</h1>
-        <p class="author">Arthur W. Pink</p>
-      </header>
+      <header class="book-heading"><p class="eyebrow">Lecture en ligne</p><h1>La souveraineté de Dieu</h1><p class="author">Arthur W. Pink</p></header>
       <section class="intro" aria-label="Présentation">La Souveraineté de Dieu est l'un des ouvrages les plus connus d'Arthur W. Pink. Dans ce livre, l'auteur expose la doctrine biblique de la souveraineté absolue de Dieu sur la création, la providence et le salut.</section>
-
       <section class="chapter active" id="avant-propos" aria-labelledby="titre-avant-propos" data-title="Avant-propos">
-        <h2 id="titre-avant-propos">Avant-propos</h2>
-        <div class="chapter-copy">
+        <h2 id="titre-avant-propos">Avant-propos</h2><div class="chapter-copy">
           <p class="subheading">Avant-propos de la première édition</p>
           <p>Dans les pages qui suivent, nous nous efforçons de réexaminer, à la lumière de la Parole de Dieu, certaines des questions les plus profondes qui puissent interpeller l'esprit humain. D'autres se sont déjà penchés sur ces problèmes complexes, et nous bénéficions de leurs travaux. Sans prétendre à l'originalité, l'auteur s'est néanmoins efforcé d'examiner et de traiter son sujet de manière indépendante. Nous avons étudié avec diligence les écrits d'hommes tels qu'Augustin et Thomas d'Aquin, Calvin et Mélanchthon, Jonathan Edwards et Ralph Erskine, Andrew Fuller et Robert Haldane.<a class="footnote-ref" id="ref-note-1" href="#note-1" aria-label="Voir la note 1">[1]</a> Il est regrettable de constater que ces noms éminents et respectés sont presque totalement inconnus de la génération actuelle. Bien entendu, nous n'approuvons pas toutes leurs conclusions, mais nous reconnaissons avec gratitude notre profonde dette envers leurs œuvres. Nous nous sommes volontairement abstenus de citer abondamment ces théologiens érudits, car nous souhaitions que la foi de nos lecteurs repose non sur la sagesse humaine, mais sur la puissance de Dieu. C’est pourquoi nous avons largement cité les Écritures et nous nous sommes efforcés de fournir des passages bibliques à l’appui de chaque affirmation avancée dans cet ouvrage.</p>
           <p>Il serait naïf de notre part d'espérer que cet ouvrage soit unanimement approuvé. La théologie moderne – si toutefois elle mérite encore ce nom – tend inexorablement vers la déification de la créature plutôt que vers la glorification du Créateur, et le ferment du rationalisme contemporain imprègne rapidement toute la chrétienté. Les effets néfastes du darwinisme sont plus profonds qu'on ne le croit. Nombre de nos chefs religieux, encore considérés comme orthodoxes<a class="footnote-ref" id="ref-note-2" href="#note-2" aria-label="Voir la note 2">[2]</a>, seraient, craignons-nous, jugés très hétérodoxes<a class="footnote-ref" id="ref-note-3" href="#note-3" aria-label="Voir la note 3">[3]</a> s'ils étaient soumis à l'examen du sanctuaire. Même ceux qui sont intellectuellement clairvoyants sur d'autres vérités sont rarement cohérents lorsqu'il s'agit de doctrine. Rares sont ceux qui, aujourd'hui, croient réellement à la ruine complète et à la dépravation totale de l'homme. Ceux qui parlent du « libre arbitre » de l'homme et insistent sur son pouvoir inhérent d'accepter ou de rejeter le Sauveur ne font que révéler leur ignorance de la véritable condition des enfants déchus d'Adam. Et s'il y a peu de gens qui pensent que, pour ce qui le concerne, la condition du pécheur est totalement désespérée, il y en a encore moins qui croient réellement en la souveraineté absolue de Dieu.</p>
@@ -118,7 +81,6 @@
           <p class="signature">Arthur W. Pink, juin 1918</p>
         </div>
       </section>
-
       <section class="chapter" id="introduction" aria-labelledby="titre-introduction" data-title="Introduction"><h2 id="titre-introduction">Introduction</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
       <section class="chapter" id="chapitre-1" aria-labelledby="titre-chapitre-1" data-title="1. Définition de la souveraineté de Dieu"><h2 id="titre-chapitre-1">1. Définition de la souveraineté de Dieu</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
       <section class="chapter" id="chapitre-2" aria-labelledby="titre-chapitre-2" data-title="2. La souveraineté de Dieu dans la création"><h2 id="titre-chapitre-2">2. La souveraineté de Dieu dans la création</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
@@ -133,26 +95,16 @@
       <section class="chapter" id="chapitre-11" aria-labelledby="titre-chapitre-11" data-title="11. Difficultés et objections"><h2 id="titre-chapitre-11">11. Difficultés et objections</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
       <section class="chapter" id="chapitre-12" aria-labelledby="titre-chapitre-12" data-title="12. La valeur de cette doctrine"><h2 id="titre-chapitre-12">12. La valeur de cette doctrine</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
       <section class="chapter" id="chapitre-13" aria-labelledby="titre-chapitre-13" data-title="13. Conclusion"><h2 id="titre-chapitre-13">13. Conclusion</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
-
-      <section class="chapter" id="notes-de-bas-de-page" aria-labelledby="titre-notes" data-title="Notes de bas de page">
-        <h2 id="titre-notes">Notes de bas de page</h2>
-        <div class="chapter-copy"><ol class="footnotes">
-          <li id="note-1"><span class="note-number">[1]</span> Parmi ceux qui ont traité le plus utilement du sujet de la souveraineté de Dieu ces dernières années, nous citons les docteurs Rice, JB Moody et George S. Bishop, dont les écrits nous ont également instruits.<a class="note-back" href="#ref-note-1" aria-label="Retour au renvoi de la note 1">↩ Retour au texte</a></li>
-          <li id="note-2"><span class="note-number">[2]</span> orthodoxe : littéralement, « croyance juste » ; qui adhère à l’ensemble des doctrines essentielles à la foi chrétienne ; cela implique une cohérence dans la croyance et le culte avec la révélation des Saintes Écritures.<a class="note-back" href="#ref-note-2" aria-label="Retour au renvoi de la note 2">↩ Retour au texte</a></li>
-          <li id="note-3"><span class="note-number">[3]</span> hétérodoxe : s’écartant des doctrines établies ; penchant vers l’hérésie.<a class="note-back" href="#ref-note-3" aria-label="Retour au renvoi de la note 3">↩ Retour au texte</a></li>
-          <li id="note-4"><span class="note-number">[4]</span> L’hypercalvinisme : la distorsion de la doctrine réformée qui soutient que, puisque Dieu a sauvé infailliblement ceux qu’il a choisis pour le salut, il n’y a pas besoin d’obéissance humaine à la Grande Mission d’évangéliser le monde.<a class="note-back" href="#ref-note-4" aria-label="Retour au renvoi de la note 4">↩ Retour au texte</a></li>
-        </ol></div>
-      </section>
-
-      <nav class="page-nav" aria-label="Navigation de lecture">
-        <button id="previous-chapter" type="button" aria-label="Page précédente">← Précédent</button>
-        <span class="page-status" id="page-status" aria-live="polite"></span>
-        <button id="next-chapter" type="button" aria-label="Page suivante">Suivant →</button>
-      </nav>
+      <section class="chapter" id="notes-de-bas-de-page" aria-labelledby="titre-notes" data-title="Notes de bas de page"><h2 id="titre-notes">Notes de bas de page</h2><div class="chapter-copy"><ol class="footnotes">
+        <li id="note-1"><span class="note-number">[1]</span> Parmi ceux qui ont traité le plus utilement du sujet de la souveraineté de Dieu ces dernières années, nous citons les docteurs Rice, JB Moody et George S. Bishop, dont les écrits nous ont également instruits.<a class="note-back" href="#ref-note-1" aria-label="Retour au renvoi de la note 1">↩ Retour au texte</a></li>
+        <li id="note-2"><span class="note-number">[2]</span> orthodoxe : littéralement, « croyance juste » ; qui adhère à l’ensemble des doctrines essentielles à la foi chrétienne ; cela implique une cohérence dans la croyance et le culte avec la révélation des Saintes Écritures.<a class="note-back" href="#ref-note-2" aria-label="Retour au renvoi de la note 2">↩ Retour au texte</a></li>
+        <li id="note-3"><span class="note-number">[3]</span> hétérodoxe : s’écartant des doctrines établies ; penchant vers l’hérésie.<a class="note-back" href="#ref-note-3" aria-label="Retour au renvoi de la note 3">↩ Retour au texte</a></li>
+        <li id="note-4"><span class="note-number">[4]</span> L’hypercalvinisme : la distorsion de la doctrine réformée qui soutient que, puisque Dieu a sauvé infailliblement ceux qu’il a choisis pour le salut, il n’y a pas besoin d’obéissance humaine à la Grande Mission d’évangéliser le monde.<a class="note-back" href="#ref-note-4" aria-label="Retour au renvoi de la note 4">↩ Retour au texte</a></li>
+      </ol></div></section>
+      <nav class="page-nav" aria-label="Navigation de lecture"><button id="previous-chapter" type="button" aria-label="Page précédente">← Précédent</button><span class="page-status" id="page-status" aria-live="polite"></span><button id="next-chapter" type="button" aria-label="Page suivante">Suivant →</button></nav>
     </article>
   </main>
   <footer><a href="../../auteurs/P/pink-arthur/index.html">← Retour à la page d'Arthur W. Pink</a></footer>
-
   <script>
     (() => {
       const chapters = [...document.querySelectorAll('.chapter')];
@@ -164,114 +116,90 @@
       const previous = document.getElementById('previous-chapter');
       const next = document.getElementById('next-chapter');
       const storageKey = 'heritage-grace-reading-souverainete-de-dieu';
-      let current = 0;
-      let page = 0;
-      let pageCount = 1;
+      let current = 0, page = 0, pageCount = 1, measureToken = 0;
 
       chapters.forEach((chapter, index) => {
         const item = document.createElement('li');
         const link = document.createElement('a');
-        link.href = `#${chapter.id}`;
-        link.textContent = chapter.dataset.title;
+        link.href = `#${chapter.id}`; link.textContent = chapter.dataset.title;
         link.addEventListener('click', event => { event.preventDefault(); showChapter(index); });
-        item.append(link);
-        toc.append(item);
-        const option = document.createElement('option');
-        option.value = index;
-        option.textContent = chapter.dataset.title;
-        select.append(option);
+        item.append(link); toc.append(item);
+        const option = document.createElement('option'); option.value = index; option.textContent = chapter.dataset.title; select.append(option);
       });
-
-      function activeIndex() { return chapters.findIndex(chapter => chapter.classList.contains('active')); }
       function activeCopy() { return chapters[current]?.querySelector('.chapter-copy'); }
-      function measurePages() {
-        const copy = activeCopy();
-        if (!copy) return;
-        const width = Math.max(1, copy.clientWidth);
-        pageCount = Math.max(1, Math.ceil((copy.scrollWidth - 2) / width));
-        page = Math.min(page, pageCount - 1);
-        updateControls();
-      }
       function updateControls() {
         const globalProgress = Math.round(((current + (page + 1) / pageCount) / chapters.length) * 100);
-        progress.value = globalProgress;
-        progressLabel.textContent = `${globalProgress} %`;
+        progress.value = globalProgress; progressLabel.textContent = `${globalProgress} %`;
         status.textContent = `Page ${page + 1} sur ${pageCount} · ${chapters[current].dataset.title}`;
         previous.disabled = current === 0 && page === 0;
         next.disabled = current === chapters.length - 1 && page >= pageCount - 1;
       }
+      function measurePages() {
+        const token = ++measureToken;
+        // Attendre deux cycles de rendu : les colonnes CSS ne sont mesurables
+        // qu'après que le chapitre actif a reçu sa hauteur finale.
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          if (token !== measureToken) return;
+          const copy = activeCopy();
+          if (!copy || !copy.clientWidth) return;
+          const width = copy.clientWidth;
+          pageCount = Math.max(1, Math.ceil((copy.scrollWidth - 1) / width));
+          page = Math.min(page, pageCount - 1);
+          updateControls();
+        }));
+      }
       function showChapter(index, save = true, anchorId = null) {
         current = Math.max(0, Math.min(index, chapters.length - 1));
         chapters.forEach((chapter, i) => chapter.classList.toggle('active', i === current));
-        [...toc.querySelectorAll('a')].forEach((link, i) => {
-          if (i === current) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
-        });
-        select.value = String(current);
-        page = 0;
+        [...toc.querySelectorAll('a')].forEach((link, i) => { if (i === current) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
+        select.value = String(current); page = 0;
         history.replaceState(null, '', `#${anchorId || chapters[current].id}`);
         if (save) localStorage.setItem(storageKey, String(current));
         requestAnimationFrame(() => {
-          const copy = activeCopy();
-          if (copy) copy.scrollLeft = 0;
-          if (anchorId) goToAnchor(anchorId);
+          const copy = activeCopy(); if (copy) copy.scrollLeft = 0;
           measurePages();
+          if (anchorId) requestAnimationFrame(() => goToAnchor(anchorId));
         });
       }
       function setPage(nextPage) {
-        const copy = activeCopy();
-        page = Math.max(0, Math.min(nextPage, pageCount - 1));
+        const copy = activeCopy(); page = Math.max(0, Math.min(nextPage, pageCount - 1));
         if (copy) copy.scrollTo({ left: page * copy.clientWidth, behavior: 'smooth' });
-        updateControls();
-        localStorage.setItem(`${storageKey}-page`, String(page));
+        updateControls(); localStorage.setItem(`${storageKey}-page`, String(page));
       }
       function turnPage(direction) {
+        const copy = activeCopy();
+        if (copy) {
+          // Synchroniser le compteur avec la largeur réelle avant de décider
+          // s'il faut tourner une page ou passer au chapitre suivant.
+          const actualPageCount = Math.max(1, Math.ceil((copy.scrollWidth - 1) / Math.max(1, copy.clientWidth)));
+          pageCount = actualPageCount;
+        }
         if (direction > 0 && page < pageCount - 1) return setPage(page + 1);
         if (direction < 0 && page > 0) return setPage(page - 1);
         const destination = current + direction;
         if (destination >= 0 && destination < chapters.length) {
           showChapter(destination);
-          requestAnimationFrame(() => {
-            if (direction < 0) {
-              measurePages();
-              setPage(pageCount - 1);
-            }
-          });
+          if (direction < 0) requestAnimationFrame(() => requestAnimationFrame(() => { measurePages(); requestAnimationFrame(() => setPage(pageCount - 1)); }));
         }
       }
       function goToAnchor(id) {
         const target = document.getElementById(id);
         const copy = target?.closest('.chapter.active')?.querySelector('.chapter-copy');
         if (!target || !copy) return;
-        const targetLeft = copy.scrollLeft + target.getBoundingClientRect().left - copy.getBoundingClientRect().left;
-        page = Math.max(0, Math.min(Math.floor(targetLeft / Math.max(1, copy.clientWidth)), pageCount - 1));
-        copy.scrollLeft = page * copy.clientWidth;
-        updateControls();
+        const offset = copy.scrollLeft + target.getBoundingClientRect().left - copy.getBoundingClientRect().left;
+        page = Math.max(0, Math.min(Math.floor(offset / Math.max(1, copy.clientWidth)), pageCount - 1));
+        copy.scrollLeft = page * copy.clientWidth; updateControls();
       }
       previous.addEventListener('click', event => { event.stopImmediatePropagation(); turnPage(-1); }, true);
       next.addEventListener('click', event => { event.stopImmediatePropagation(); turnPage(1); }, true);
       select.addEventListener('change', () => showChapter(Number(select.value)));
-      document.getElementById('decrease-font').addEventListener('click', () => {
-        const size = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--reader-size'));
-        document.documentElement.style.setProperty('--reader-size', `${Math.max(0.9, size - 0.1)}rem`);
-        requestAnimationFrame(measurePages);
-      });
-      document.getElementById('increase-font').addEventListener('click', () => {
-        const size = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--reader-size'));
-        document.documentElement.style.setProperty('--reader-size', `${Math.min(1.7, size + 0.1)}rem`);
-        requestAnimationFrame(measurePages);
-      });
+      document.getElementById('decrease-font').addEventListener('click', () => { const size = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--reader-size')); document.documentElement.style.setProperty('--reader-size', `${Math.max(.9, size - .1)}rem`); measurePages(); });
+      document.getElementById('increase-font').addEventListener('click', () => { const size = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--reader-size')); document.documentElement.style.setProperty('--reader-size', `${Math.min(1.7, size + .1)}rem`); measurePages(); });
       document.addEventListener('click', event => {
-        const link = event.target.closest('a[href^="#"]');
-        if (!link || link.closest('.toc')) return;
-        const id = decodeURIComponent(link.getAttribute('href').slice(1));
-        const target = document.getElementById(id);
-        const targetChapter = target?.closest('.chapter');
-        if (!targetChapter) return;
-        event.preventDefault();
-        const targetIndex = chapters.indexOf(targetChapter);
-        if (targetIndex !== current) showChapter(targetIndex, true, id);
-        else { history.replaceState(null, '', `#${id}`); goToAnchor(id); }
+        const link = event.target.closest('a[href^="#"]'); if (!link || link.closest('.toc')) return;
+        const id = decodeURIComponent(link.getAttribute('href').slice(1)); const target = document.getElementById(id); const chapter = target?.closest('.chapter');
+        if (!chapter) return; event.preventDefault(); const index = chapters.indexOf(chapter);
+        if (index !== current) showChapter(index, true, id); else { history.replaceState(null, '', `#${id}`); goToAnchor(id); }
       });
       document.addEventListener('keydown', event => {
         if (event.altKey || event.ctrlKey || event.metaKey || /INPUT|SELECT|TEXTAREA|BUTTON/.test(document.activeElement.tagName)) return;
@@ -280,21 +208,14 @@
       });
       let touchStartX = 0;
       document.querySelector('.book').addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
-      document.querySelector('.book').addEventListener('touchend', event => {
-        const delta = event.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(delta) > 65) turnPage(delta < 0 ? 1 : -1);
-      }, { passive: true });
-      window.addEventListener('resize', () => requestAnimationFrame(measurePages));
-
+      document.querySelector('.book').addEventListener('touchend', event => { const delta = event.changedTouches[0].clientX - touchStartX; if (Math.abs(delta) > 65) turnPage(delta < 0 ? 1 : -1); }, { passive: true });
+      window.addEventListener('resize', measurePages);
       const target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
-      const targetChapter = target?.closest('.chapter');
-      const hashIndex = targetChapter ? chapters.indexOf(targetChapter) : -1;
+      const chapterForHash = target?.closest('.chapter');
+      const hashIndex = chapterForHash ? chapters.indexOf(chapterForHash) : -1;
       const savedIndex = Number(localStorage.getItem(storageKey));
       showChapter(hashIndex >= 0 ? hashIndex : (Number.isInteger(savedIndex) && savedIndex < chapters.length ? savedIndex : 0), false, target?.id || null);
-      if (hashIndex < 0) {
-        const savedPage = Number(localStorage.getItem(`${storageKey}-page`));
-        if (Number.isInteger(savedPage) && savedPage >= 0) requestAnimationFrame(() => { measurePages(); setPage(savedPage); });
-      }
+      if (hashIndex < 0) { const savedPage = Number(localStorage.getItem(`${storageKey}-page`)); if (Number.isInteger(savedPage) && savedPage >= 0) requestAnimationFrame(() => requestAnimationFrame(() => { measurePages(); requestAnimationFrame(() => setPage(savedPage)); })); }
     })();
   </script>
 </body>
