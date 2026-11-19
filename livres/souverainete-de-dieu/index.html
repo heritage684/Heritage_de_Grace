@@ -47,7 +47,8 @@
     }
 
     .site-header nav a:hover, .site-header nav a:focus-visible,
-    .back:hover, .back:focus-visible { text-decoration: underline; }
+    .back:hover, .back:focus-visible,
+    .contents a:hover, .contents a:focus-visible { text-decoration: underline; }
 
     main {
       width: min(100% - 2rem, 820px);
@@ -70,19 +71,30 @@
     h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.15; }
     .author { margin: .75rem 0 2rem; color: var(--muted); font-style: italic; }
 
-    .notice {
+    .notice, .contents {
       padding: 1.25rem 1.5rem;
       border-left: 3px solid var(--gold);
       background: #f5f4ef;
     }
 
-    .notice h2 { margin: 0 0 .5rem; font-size: 1.2rem; }
+    .notice h2, .contents h2 { margin: 0 0 .5rem; font-size: 1.2rem; }
     .notice p { margin: 0; }
+
+    .contents { margin-top: 2rem; }
+    .contents ol { margin: .75rem 0 0; padding-left: 1.5rem; }
+    .contents li { padding: .15rem 0; }
+    .contents a { color: var(--navy); }
+
+    .chapter { padding-top: 1rem; scroll-margin-top: 1.5rem; }
+    .chapter h2 { margin: 2rem 0 .5rem; font-size: clamp(1.35rem, 4vw, 1.8rem); }
+    .chapter-placeholder { color: var(--muted); font-style: italic; }
+
     .back { display: inline-block; margin-top: 2rem; color: var(--navy); font-family: Arial, Helvetica, sans-serif; font-weight: 700; }
 
     @media (max-width: 600px) {
       .site-header { padding: 14px 5%; flex-direction: column; }
       main { margin: 1rem auto; }
+      .contents { padding: 1rem; }
     }
   </style>
 </head>
@@ -98,11 +110,92 @@
     <h1>La souveraineté de Dieu</h1>
     <p class="author">Arthur W. Pink</p>
 
-    <section class="notice" aria-labelledby="texte-a-venir">
-      <h2 id="texte-a-venir">Présentation</h2>
+    <section class="notice" aria-labelledby="presentation">
+      <h2 id="presentation">Présentation</h2>
       <p>La Souveraineté de Dieu est l'un des ouvrages les plus connus d'Arthur W. Pink.
+      Dans ce livre, l'auteur expose la doctrine biblique de la souveraineté absolue de Dieu sur la création, la providence et le salut.</p>
+    </section>
 
-Dans ce livre, l'auteur expose la doctrine biblique de la souveraineté absolue de Dieu sur la création, la providence et le salut.</p>
+    <nav class="contents" aria-labelledby="sommaire">
+      <h2 id="sommaire">Sommaire</h2>
+      <ol>
+        <li><a href="#avant-propos">Avant-propos</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#chapitre-1">1. Définition de la souveraineté de Dieu</a></li>
+        <li><a href="#chapitre-2">2. La souveraineté de Dieu dans la création</a></li>
+        <li><a href="#chapitre-3">3. La souveraineté de Dieu dans l'administration</a></li>
+        <li><a href="#chapitre-4">4. La souveraineté de Dieu dans le salut</a></li>
+        <li><a href="#chapitre-5">5. La souveraineté de Dieu dans la réprobation</a></li>
+        <li><a href="#chapitre-6">6. La souveraineté de Dieu en action</a></li>
+        <li><a href="#chapitre-7">7. La souveraineté de Dieu dans la volonté humaine</a></li>
+        <li><a href="#chapitre-8">8. Souveraineté et responsabilité humaine</a></li>
+        <li><a href="#chapitre-9">9. La souveraineté de Dieu et la prière</a></li>
+        <li><a href="#chapitre-10">10. Notre attitude envers sa souveraineté</a></li>
+        <li><a href="#chapitre-11">11. Difficultés et objections</a></li>
+        <li><a href="#chapitre-12">12. La valeur de cette doctrine</a></li>
+        <li><a href="#chapitre-13">13. Conclusion</a></li>
+      </ol>
+    </nav>
+
+    <section class="chapter" id="avant-propos" aria-labelledby="titre-avant-propos">
+      <h2 id="titre-avant-propos">Avant-propos</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="introduction" aria-labelledby="titre-introduction">
+      <h2 id="titre-introduction">Introduction</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-1" aria-labelledby="titre-chapitre-1">
+      <h2 id="titre-chapitre-1">1. Définition de la souveraineté de Dieu</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-2" aria-labelledby="titre-chapitre-2">
+      <h2 id="titre-chapitre-2">2. La souveraineté de Dieu dans la création</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-3" aria-labelledby="titre-chapitre-3">
+      <h2 id="titre-chapitre-3">3. La souveraineté de Dieu dans l'administration</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-4" aria-labelledby="titre-chapitre-4">
+      <h2 id="titre-chapitre-4">4. La souveraineté de Dieu dans le salut</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-5" aria-labelledby="titre-chapitre-5">
+      <h2 id="titre-chapitre-5">5. La souveraineté de Dieu dans la réprobation</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-6" aria-labelledby="titre-chapitre-6">
+      <h2 id="titre-chapitre-6">6. La souveraineté de Dieu en action</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-7" aria-labelledby="titre-chapitre-7">
+      <h2 id="titre-chapitre-7">7. La souveraineté de Dieu dans la volonté humaine</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-8" aria-labelledby="titre-chapitre-8">
+      <h2 id="titre-chapitre-8">8. Souveraineté et responsabilité humaine</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-9" aria-labelledby="titre-chapitre-9">
+      <h2 id="titre-chapitre-9">9. La souveraineté de Dieu et la prière</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-10" aria-labelledby="titre-chapitre-10">
+      <h2 id="titre-chapitre-10">10. Notre attitude envers sa souveraineté</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-11" aria-labelledby="titre-chapitre-11">
+      <h2 id="titre-chapitre-11">11. Difficultés et objections</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-12" aria-labelledby="titre-chapitre-12">
+      <h2 id="titre-chapitre-12">12. La valeur de cette doctrine</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
+    </section>
+    <section class="chapter" id="chapitre-13" aria-labelledby="titre-chapitre-13">
+      <h2 id="titre-chapitre-13">13. Conclusion</h2>
+      <p class="chapter-placeholder">Contenu à ajouter.</p>
     </section>
 
     <a class="back" href="../../auteurs/P/pink-arthur/index.html">← Retour à la page d'Arthur W. Pink</a>
