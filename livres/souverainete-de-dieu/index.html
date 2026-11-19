@@ -47,16 +47,25 @@
     h1 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 400; line-height: 1.15; }
     .author { margin: .6rem 0 0; color: var(--muted); font-style: italic; }
     .intro { max-width: 75ch; margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 3px solid var(--gold); background: #f7f6f1; line-height: 1.65; }
-    .chapter { display: none; min-height: 54vh; padding: 1rem 0; }
+    .chapter { display: none; min-height: 54vh; padding: 1rem 0; scroll-margin-top: 1rem; }
     .chapter.active { display: block; }
     .chapter h2 { margin: .25rem 0 1.5rem; color: var(--navy); text-align: center; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400; }
     .chapter-copy { max-width: 82ch; margin: 0 auto; font-size: var(--reader-size); line-height: 1.85; text-align: justify; hyphens: auto; column-count: 2; column-gap: clamp(2rem, 5vw, 5rem); column-rule: 1px solid #eeece6; }
     .chapter-copy p { margin: 0 0 1em; }
+    .chapter-copy .subheading { margin-top: 1.6rem; color: var(--navy); font-size: 1.08em; font-weight: 700; }
+    .chapter-copy .signature { margin-top: 1.5rem; text-align: right; font-style: italic; }
     .chapter-placeholder { color: var(--muted); font-style: italic; text-align: center; }
+    .footnote-ref { color: #8a5d19; font-size: .75em; font-weight: 700; text-decoration: none; vertical-align: super; }
+    .footnote-ref:hover, .note-back:hover { text-decoration: underline; }
+    .footnotes { list-style: none; margin: 0; padding: 0; }
+    .footnotes li { margin: 0 0 1.25rem; padding: 0 0 1rem; border-bottom: 1px solid var(--line); break-inside: avoid; }
+    .note-number { color: #8a5d19; font-weight: 700; }
+    .note-back { display: inline-block; margin-left: .4rem; color: var(--navy); font: .8rem Arial, Helvetica, sans-serif; text-decoration: none; }
     .page-nav { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-family: Arial, Helvetica, sans-serif; }
     .page-nav button:disabled { opacity: .45; cursor: not-allowed; }
     .page-status { align-self: center; color: var(--muted); font-size: .84rem; }
     footer { padding: 1.5rem; color: #dce5e9; background: var(--navy); text-align: center; font: .85rem Arial, Helvetica, sans-serif; }
+    footer a { color: inherit; }
     @media (max-width: 800px) {
       .reader-layout { grid-template-columns: 1fr; }
       .toc { position: static; max-height: none; }
@@ -107,8 +116,17 @@
       </section>
 
       <section class="chapter active" id="avant-propos" aria-labelledby="titre-avant-propos" data-title="Avant-propos">
-        <h2 id="titre-avant-propos">Avant-propos</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
+        <h2 id="titre-avant-propos">Avant-propos</h2>
+        <div class="chapter-copy">
+          <p class="subheading">Avant-propos de la première édition</p>
+          <p>Dans les pages qui suivent, nous nous efforçons de réexaminer, à la lumière de la Parole de Dieu, certaines des questions les plus profondes qui puissent interpeller l'esprit humain. D'autres se sont déjà penchés sur ces problèmes complexes, et nous bénéficions de leurs travaux. Sans prétendre à l'originalité, l'auteur s'est néanmoins efforcé d'examiner et de traiter son sujet de manière indépendante. Nous avons étudié avec diligence les écrits d'hommes tels qu'Augustin et Thomas d'Aquin, Calvin et Mélanchthon, Jonathan Edwards et Ralph Erskine, Andrew Fuller et Robert Haldane.<a class="footnote-ref" id="ref-note-1" href="#note-1" aria-label="Voir la note 1">[1]</a> Il est regrettable de constater que ces noms éminents et respectés sont presque totalement inconnus de la génération actuelle. Bien entendu, nous n'approuvons pas toutes leurs conclusions, mais nous reconnaissons avec gratitude notre profonde dette envers leurs œuvres. Nous nous sommes volontairement abstenus de citer abondamment ces théologiens érudits, car nous souhaitions que la foi de nos lecteurs repose non sur la sagesse humaine, mais sur la puissance de Dieu. C’est pourquoi nous avons largement cité les Écritures et nous nous sommes efforcés de fournir des passages bibliques à l’appui de chaque affirmation avancée dans cet ouvrage.</p>
+          <p>Il serait naïf de notre part d'espérer que cet ouvrage soit unanimement approuvé. La théologie moderne – si toutefois elle mérite encore ce nom – tend inexorablement vers la déification de la créature plutôt que vers la glorification du Créateur, et le ferment du rationalisme contemporain imprègne rapidement toute la chrétienté. Les effets néfastes du darwinisme sont plus profonds qu'on ne le croit. Nombre de nos chefs religieux, encore considérés comme orthodoxes<a class="footnote-ref" id="ref-note-2" href="#note-2" aria-label="Voir la note 2">[2]</a>, seraient, craignons-nous, jugés très hétérodoxes<a class="footnote-ref" id="ref-note-3" href="#note-3" aria-label="Voir la note 3">[3]</a> s'ils étaient soumis à l'examen du sanctuaire. Même ceux qui sont intellectuellement clairvoyants sur d'autres vérités sont rarement cohérents lorsqu'il s'agit de doctrine. Rares sont ceux qui, aujourd'hui, croient réellement à la ruine complète et à la dépravation totale de l'homme. Ceux qui parlent du « libre arbitre » de l'homme et insistent sur son pouvoir inhérent d'accepter ou de rejeter le Sauveur ne font que révéler leur ignorance de la véritable condition des enfants déchus d'Adam. Et s'il y a peu de gens qui pensent que, pour ce qui le concerne, la condition du pécheur est totalement désespérée, il y en a encore moins qui croient réellement en la souveraineté absolue de Dieu.</p>
+          <p>Outre les effets généralisés des enseignements non bibliques, nous devons aussi tenir compte de la déplorable superficialité de la génération actuelle. Annoncer qu'un livre est un traité de doctrine suffit amplement à le faire rejeter par la grande majorité des fidèles et de la plupart de nos prédicateurs. Aujourd'hui, on recherche la légèreté et le divertissement, rares sont ceux qui ont la patience, et encore moins le désir, d'examiner attentivement, ce qui exigerait d’eux un véritable effort de réflexion. Nous nous souvenons aussi combien il devient de plus en plus difficile, en ces temps difficiles, pour ceux qui désirent étudier les profondeurs de la foi de trouver le temps nécessaire à une telle étude. Pourtant, il est toujours vrai que « vouloir, c'est pouvoir », et malgré les aspects décourageants mentionnés, nous croyons qu'il existe encore aujourd'hui un petit reste fidèle qui prendra plaisir à examiner attentivement ce modeste ouvrage, et nous sommes convaincus que ceux-ci y trouveront, en temps voulu, « une nourriture profitable pour leur réflexion ».</p>
+          <p>Nous n'oublions pas les paroles d'un homme disparu depuis longtemps : « La dénonciation est le dernier recours de l'adversaire vaincu. » Qualifier ce livre d'« hypercalvinisme ! »<a class="footnote-ref" id="ref-note-4" href="#note-4" aria-label="Voir la note 4">[4]</a>, avec mépris, serait indigne d'intérêt. La controverse ne nous attire guère, et nous n'accepterons aucune provocation nous entraînant dans des débats avec ceux qui souhaiteraient débattre des vérités exposées dans ces pages. Quant à notre réputation, nous la laissons entre les mains du Seigneur. C'est entre Ses mains que nous remettons ce livre et les fruits qu'il portera, Le priant de l'utiliser pour éclairer Son peuple (dans la mesure où cela est conforme à Sa Parole) et de pardonner à l'auteur et de préserver le lecteur des effets néfastes de tout enseignement erroné qui aurait pu s'y glisser. Si la joie et le réconfort ressentis par l'auteur lors de la rédaction de ces pages sont partagés par ceux qui les parcourront, nous serons profondément reconnaissants à Celui dont la grâce seule nous permet de discerner les choses spirituelles.</p>
+          <p class="signature">Arthur W. Pink, juin 1918</p>
+        </div>
       </section>
+
       <section class="chapter" id="introduction" aria-labelledby="titre-introduction" data-title="Introduction">
         <h2 id="titre-introduction">Introduction</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
       </section>
@@ -152,6 +170,18 @@
         <h2 id="titre-chapitre-13">13. Conclusion</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
       </section>
 
+      <section class="chapter" id="notes-de-bas-de-page" aria-labelledby="titre-notes" data-title="Notes de bas de page">
+        <h2 id="titre-notes">Notes de bas de page</h2>
+        <div class="chapter-copy">
+          <ol class="footnotes">
+            <li id="note-1"><span class="note-number">[1]</span> Parmi ceux qui ont traité le plus utilement du sujet de la souveraineté de Dieu ces dernières années, nous citons les docteurs Rice, JB Moody et George S. Bishop, dont les écrits nous ont également instruits.<a class="note-back" href="#ref-note-1" aria-label="Retour au renvoi de la note 1">↩ Retour au texte</a></li>
+            <li id="note-2"><span class="note-number">[2]</span> orthodoxe : littéralement, « croyance juste » ; qui adhère à l’ensemble des doctrines essentielles à la foi chrétienne ; cela implique une cohérence dans la croyance et le culte avec la révélation des Saintes Écritures.<a class="note-back" href="#ref-note-2" aria-label="Retour au renvoi de la note 2">↩ Retour au texte</a></li>
+            <li id="note-3"><span class="note-number">[3]</span> hétérodoxe : s’écartant des doctrines établies ; penchant vers l’hérésie.<a class="note-back" href="#ref-note-3" aria-label="Retour au renvoi de la note 3">↩ Retour au texte</a></li>
+            <li id="note-4"><span class="note-number">[4]</span> L’hypercalvinisme : la distorsion de la doctrine réformée qui soutient que, puisque Dieu a sauvé infailliblement ceux qu’il a choisis pour le salut, il n’y a pas besoin d’obéissance humaine à la Grande Mission d’évangéliser le monde.<a class="note-back" href="#ref-note-4" aria-label="Retour au renvoi de la note 4">↩ Retour au texte</a></li>
+          </ol>
+        </div>
+      </section>
+
       <nav class="page-nav" aria-label="Navigation de lecture">
         <button id="previous-chapter" type="button">← Précédent</button>
         <span class="page-status" id="page-status" aria-live="polite"></span>
@@ -189,7 +219,7 @@
         select.append(option);
       });
 
-      function showChapter(index, save = true) {
+      function showChapter(index, save = true, targetId = null) {
         current = Math.max(0, Math.min(index, chapters.length - 1));
         chapters.forEach((chapter, i) => chapter.classList.toggle('active', i === current));
         [...toc.querySelectorAll('a')].forEach((link, i) => {
@@ -203,10 +233,22 @@
         progress.value = percent;
         progressLabel.textContent = `${percent} %`;
         status.textContent = `Section ${current + 1} sur ${chapters.length}`;
-        history.replaceState(null, '', `#${chapters[current].id}`);
+        const hash = targetId || chapters[current].id;
+        history.replaceState(null, '', `#${hash}`);
         if (save) localStorage.setItem(storageKey, String(current));
+        if (targetId) document.getElementById(targetId)?.scrollIntoView({ block: 'center' });
       }
 
+      document.addEventListener('click', event => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link || link.closest('.toc')) return;
+        const targetId = decodeURIComponent(link.getAttribute('href').slice(1));
+        const target = document.getElementById(targetId);
+        const chapter = target?.closest('.chapter');
+        if (!chapter) return;
+        event.preventDefault();
+        showChapter(chapters.indexOf(chapter), true, targetId);
+      });
       previous.addEventListener('click', () => showChapter(current - 1));
       next.addEventListener('click', () => showChapter(current + 1));
       select.addEventListener('change', () => showChapter(Number(select.value)));
@@ -219,9 +261,11 @@
         document.documentElement.style.setProperty('--reader-size', `${Math.min(1.7, size + 0.1)}rem`);
       });
 
-      const hashIndex = chapters.findIndex(chapter => `#${chapter.id}` === location.hash);
+      const target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+      const targetChapter = target?.closest('.chapter');
+      const hashIndex = targetChapter ? chapters.indexOf(targetChapter) : -1;
       const savedIndex = Number(localStorage.getItem(storageKey));
-      showChapter(hashIndex >= 0 ? hashIndex : (Number.isInteger(savedIndex) ? savedIndex : 0), false);
+      showChapter(hashIndex >= 0 ? hashIndex : (Number.isInteger(savedIndex) && savedIndex < chapters.length ? savedIndex : 0), false, target?.id || null);
     })();
   </script>
 </body>
