@@ -7,53 +7,44 @@
   <meta name="theme-color" content="#173951">
   <title>La souveraineté de Dieu — Lecture en ligne | Héritage de Grâce</title>
   <style>
-    :root {
-      color-scheme: light;
-      --ink: #222b33;
-      --muted: #64727c;
-      --paper: #fffefa;
-      --navy: #173951;
-      --gold: #e7a744;
-      --line: #e5e2dc;
-      --reader-size: 1.08rem;
-    }
+    :root { color-scheme: light; --ink: #222b33; --muted: #64727c; --paper: #fffefa; --navy: #173951; --gold: #e7a744; --line: #e5e2dc; --reader-size: 1.08rem; }
     * { box-sizing: border-box; }
     body { margin: 0; color: var(--ink); background: #f3f4f4; font-family: Georgia, "Times New Roman", serif; }
     a { color: inherit; }
-    .topbar { min-height: 74px; padding: 12px clamp(1rem, 4vw, 3.5rem); display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #fff; background: var(--navy); font-family: Arial, Helvetica, sans-serif; }
+    .topbar { min-height: 66px; padding: 10px clamp(1rem, 3vw, 3rem); display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #fff; background: var(--navy); font-family: Arial, Helvetica, sans-serif; }
     .brand { color: #fff; text-decoration: none; font-weight: 700; letter-spacing: .03em; }
     .topbar nav { display: flex; gap: 1.5rem; }
     .topbar nav a { text-decoration: none; font-size: .92rem; }
     .topbar nav a:hover, .topbar nav a:focus-visible { text-decoration: underline; }
-    .announcement { width: min(100% - 2rem, 1080px); margin: 1rem auto 0; padding: .8rem 1rem; border-left: 4px solid var(--gold); border-radius: 4px; background: white; color: #35434b; font: .9rem/1.5 Arial, Helvetica, sans-serif; }
-    .reader-toolbar { width: min(100% - 2rem, 1320px); margin: 1.25rem auto 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; font-family: Arial, Helvetica, sans-serif; }
+    .announcement { width: min(100% - 2rem, 1200px); margin: .75rem auto 0; padding: .65rem 1rem; border-left: 4px solid var(--gold); border-radius: 4px; background: white; color: #35434b; font: .88rem/1.5 Arial, Helvetica, sans-serif; }
+    .reader-toolbar { width: min(100% - 2rem, 1780px); margin: .8rem auto 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; font-family: Arial, Helvetica, sans-serif; }
     .book-label { color: var(--muted); font-size: .88rem; }
     .tools { display: flex; align-items: center; gap: .5rem; }
     button, select { min-height: 40px; padding: .45rem .8rem; border: 1px solid #d5d9db; border-radius: 4px; color: var(--navy); background: #fff; font: 600 .9rem Arial, Helvetica, sans-serif; cursor: pointer; }
     button:hover, select:hover { border-color: var(--navy); }
     button:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid #e7a744; outline-offset: 2px; }
-    .progress-wrap { width: min(100% - 2rem, 1320px); margin: .75rem auto; display: flex; align-items: center; gap: .75rem; color: var(--muted); font: .78rem Arial, Helvetica, sans-serif; }
+    .progress-wrap { width: min(100% - 2rem, 1780px); margin: .5rem auto; display: flex; align-items: center; gap: .75rem; color: var(--muted); font: .78rem Arial, Helvetica, sans-serif; }
     progress { width: 100%; height: 6px; accent-color: var(--gold); }
-    .reader-layout { width: min(100% - 2rem, 1320px); margin: 1rem auto 3rem; display: grid; grid-template-columns: 245px minmax(0, 1fr); gap: 1.25rem; align-items: start; }
-    .toc { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow: auto; padding: 1.25rem; border: 1px solid var(--line); background: var(--paper); font-family: Arial, Helvetica, sans-serif; }
+    .reader-layout { width: min(100% - 1rem, 1880px); margin: .5rem auto 1rem; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: .8rem; align-items: stretch; }
+    .toc { position: sticky; top: .5rem; max-height: calc(100dvh - 130px); overflow: auto; padding: 1rem; border: 1px solid var(--line); background: var(--paper); font-family: Arial, Helvetica, sans-serif; }
     .toc h2 { margin: 0 0 .75rem; color: var(--navy); font-size: 1rem; }
     .toc ol { margin: 0; padding-left: 1.2rem; }
     .toc li { padding: .3rem 0; font-size: .84rem; line-height: 1.4; }
     .toc a { text-decoration: none; }
     .toc a:hover, .toc a[aria-current="location"] { color: #9a6a20; text-decoration: underline; }
-    .book { min-width: 0; padding: clamp(1.25rem, 4vw, 3.25rem); background: var(--paper); border: 1px solid var(--line); box-shadow: 0 12px 38px #1c344011; }
-    .book-heading { padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
-    .eyebrow { margin: 0 0 .5rem; color: #987332; font: 700 .72rem Arial, Helvetica, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
-    h1 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 400; line-height: 1.15; }
-    .author { margin: .6rem 0 0; color: var(--muted); font-style: italic; }
-    .intro { max-width: 75ch; margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 3px solid var(--gold); background: #f7f6f1; line-height: 1.65; }
-    .chapter { display: none; min-height: 54vh; padding: 1rem 0; scroll-margin-top: 1rem; }
-    .chapter.active { display: block; }
-    .chapter h2 { margin: .25rem 0 1.5rem; color: var(--navy); text-align: center; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400; }
-    .chapter-copy { max-width: 82ch; margin: 0 auto; font-size: var(--reader-size); line-height: 1.85; text-align: justify; hyphens: auto; column-count: 2; column-gap: clamp(2rem, 5vw, 5rem); column-rule: 1px solid #eeece6; }
-    .chapter-copy p { margin: 0 0 1em; }
-    .chapter-copy .subheading { margin-top: 1.6rem; color: var(--navy); font-size: 1.08em; font-weight: 700; }
-    .chapter-copy .signature { margin-top: 1.5rem; text-align: right; font-style: italic; }
+    .book { min-width: 0; height: calc(100dvh - 185px); min-height: 520px; padding: clamp(1rem, 2vw, 2rem); display: flex; flex-direction: column; overflow: hidden; background: var(--paper); border: 1px solid var(--line); box-shadow: 0 12px 38px #1c344011; }
+    .book-heading { flex: 0 0 auto; padding-bottom: .65rem; border-bottom: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 .25rem; color: #987332; font: 700 .68rem Arial, Helvetica, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 0; color: var(--navy); font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.1; }
+    .author { margin: .3rem 0 0; color: var(--muted); font-style: italic; }
+    .intro { display: none; }
+    .chapter { display: none; flex: 1 1 auto; min-height: 0; padding: .5rem 0 0; }
+    .chapter.active { display: flex; flex-direction: column; }
+    .chapter h2 { flex: 0 0 auto; margin: .2rem 0 .55rem; color: var(--navy); text-align: center; font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 400; }
+    .chapter-copy { width: 100%; max-width: none; height: 0; min-height: 0; flex: 1 1 auto; margin: 0 auto; padding: .25rem .2rem .75rem; overflow-x: auto; overflow-y: hidden; font-size: var(--reader-size); line-height: 1.7; text-align: justify; hyphens: auto; column-count: auto; column-width: calc((100% - 3.2rem) / 2); column-gap: 3.2rem; column-fill: auto; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #b9c1c5 transparent; }
+    .chapter-copy p { margin: 0 0 .85em; }
+    .chapter-copy .subheading { margin-top: .5rem; color: var(--navy); font-size: 1.06em; font-weight: 700; }
+    .chapter-copy .signature { margin-top: 1.25rem; text-align: right; font-style: italic; }
     .chapter-placeholder { color: var(--muted); font-style: italic; text-align: center; }
     .footnote-ref { color: #8a5d19; font-size: .75em; font-weight: 700; text-decoration: none; vertical-align: super; }
     .footnote-ref:hover, .note-back:hover { text-decoration: underline; }
@@ -61,25 +52,28 @@
     .footnotes li { margin: 0 0 1.25rem; padding: 0 0 1rem; border-bottom: 1px solid var(--line); break-inside: avoid; }
     .note-number { color: #8a5d19; font-weight: 700; }
     .note-back { display: inline-block; margin-left: .4rem; color: var(--navy); font: .8rem Arial, Helvetica, sans-serif; text-decoration: none; }
-    .page-nav { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-family: Arial, Helvetica, sans-serif; }
+    .page-nav { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .65rem; border-top: 1px solid var(--line); font-family: Arial, Helvetica, sans-serif; }
     .page-nav button:disabled { opacity: .45; cursor: not-allowed; }
-    .page-status { align-self: center; color: var(--muted); font-size: .84rem; }
-    footer { padding: 1.5rem; color: #dce5e9; background: var(--navy); text-align: center; font: .85rem Arial, Helvetica, sans-serif; }
-    footer a { color: inherit; }
-    @media (max-width: 800px) {
+    .page-status { align-self: center; color: var(--muted); font-size: .84rem; text-align: center; }
+    footer { display: none; }
+    @media (max-width: 900px) {
       .reader-layout { grid-template-columns: 1fr; }
-      .toc { position: static; max-height: none; }
-      .toc ol { columns: 2; }
+      .toc { position: static; max-height: 110px; overflow: auto; padding: .65rem 1rem; }
+      .toc h2 { margin-bottom: .35rem; }
+      .toc ol { columns: 3; }
+      .book { height: calc(100dvh - 285px); min-height: 460px; }
     }
     @media (max-width: 560px) {
       .topbar { align-items: flex-start; flex-direction: column; }
       .topbar nav { flex-wrap: wrap; gap: 1rem; }
       .reader-toolbar { align-items: flex-start; flex-direction: column; }
       .tools { width: 100%; flex-wrap: wrap; }
-      .chapter-copy { column-count: 1; text-align: left; }
-      .toc ol { columns: 1; }
+      .toc ol { columns: 2; }
+      .book { height: calc(100dvh - 320px); min-height: 410px; padding: .85rem; }
+      .chapter-copy { text-align: left; column-width: calc(100% - 1rem); column-gap: 1rem; }
       .page-nav button { padding-inline: .55rem; font-size: .8rem; }
     }
+    @media (prefers-reduced-motion: reduce) { .chapter-copy { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
@@ -111,9 +105,7 @@
         <h1>La souveraineté de Dieu</h1>
         <p class="author">Arthur W. Pink</p>
       </header>
-      <section class="intro" aria-label="Présentation">
-        La Souveraineté de Dieu est l'un des ouvrages les plus connus d'Arthur W. Pink. Dans ce livre, l'auteur expose la doctrine biblique de la souveraineté absolue de Dieu sur la création, la providence et le salut.
-      </section>
+      <section class="intro" aria-label="Présentation">La Souveraineté de Dieu est l'un des ouvrages les plus connus d'Arthur W. Pink. Dans ce livre, l'auteur expose la doctrine biblique de la souveraineté absolue de Dieu sur la création, la providence et le salut.</section>
 
       <section class="chapter active" id="avant-propos" aria-labelledby="titre-avant-propos" data-title="Avant-propos">
         <h2 id="titre-avant-propos">Avant-propos</h2>
@@ -127,65 +119,35 @@
         </div>
       </section>
 
-      <section class="chapter" id="introduction" aria-labelledby="titre-introduction" data-title="Introduction">
-        <h2 id="titre-introduction">Introduction</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-1" aria-labelledby="titre-chapitre-1" data-title="1. Définition de la souveraineté de Dieu">
-        <h2 id="titre-chapitre-1">1. Définition de la souveraineté de Dieu</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-2" aria-labelledby="titre-chapitre-2" data-title="2. La souveraineté de Dieu dans la création">
-        <h2 id="titre-chapitre-2">2. La souveraineté de Dieu dans la création</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-3" aria-labelledby="titre-chapitre-3" data-title="3. La souveraineté de Dieu dans l'administration">
-        <h2 id="titre-chapitre-3">3. La souveraineté de Dieu dans l'administration</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-4" aria-labelledby="titre-chapitre-4" data-title="4. La souveraineté de Dieu dans le salut">
-        <h2 id="titre-chapitre-4">4. La souveraineté de Dieu dans le salut</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-5" aria-labelledby="titre-chapitre-5" data-title="5. La souveraineté de Dieu dans la réprobation">
-        <h2 id="titre-chapitre-5">5. La souveraineté de Dieu dans la réprobation</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-6" aria-labelledby="titre-chapitre-6" data-title="6. La souveraineté de Dieu en action">
-        <h2 id="titre-chapitre-6">6. La souveraineté de Dieu en action</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-7" aria-labelledby="titre-chapitre-7" data-title="7. La souveraineté de Dieu dans la volonté humaine">
-        <h2 id="titre-chapitre-7">7. La souveraineté de Dieu dans la volonté humaine</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-8" aria-labelledby="titre-chapitre-8" data-title="8. Souveraineté et responsabilité humaine">
-        <h2 id="titre-chapitre-8">8. Souveraineté et responsabilité humaine</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-9" aria-labelledby="titre-chapitre-9" data-title="9. La souveraineté de Dieu et la prière">
-        <h2 id="titre-chapitre-9">9. La souveraineté de Dieu et la prière</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-10" aria-labelledby="titre-chapitre-10" data-title="10. Notre attitude envers sa souveraineté">
-        <h2 id="titre-chapitre-10">10. Notre attitude envers sa souveraineté</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-11" aria-labelledby="titre-chapitre-11" data-title="11. Difficultés et objections">
-        <h2 id="titre-chapitre-11">11. Difficultés et objections</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-12" aria-labelledby="titre-chapitre-12" data-title="12. La valeur de cette doctrine">
-        <h2 id="titre-chapitre-12">12. La valeur de cette doctrine</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
-      <section class="chapter" id="chapitre-13" aria-labelledby="titre-chapitre-13" data-title="13. Conclusion">
-        <h2 id="titre-chapitre-13">13. Conclusion</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div>
-      </section>
+      <section class="chapter" id="introduction" aria-labelledby="titre-introduction" data-title="Introduction"><h2 id="titre-introduction">Introduction</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-1" aria-labelledby="titre-chapitre-1" data-title="1. Définition de la souveraineté de Dieu"><h2 id="titre-chapitre-1">1. Définition de la souveraineté de Dieu</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-2" aria-labelledby="titre-chapitre-2" data-title="2. La souveraineté de Dieu dans la création"><h2 id="titre-chapitre-2">2. La souveraineté de Dieu dans la création</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-3" aria-labelledby="titre-chapitre-3" data-title="3. La souveraineté de Dieu dans l'administration"><h2 id="titre-chapitre-3">3. La souveraineté de Dieu dans l'administration</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-4" aria-labelledby="titre-chapitre-4" data-title="4. La souveraineté de Dieu dans le salut"><h2 id="titre-chapitre-4">4. La souveraineté de Dieu dans le salut</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-5" aria-labelledby="titre-chapitre-5" data-title="5. La souveraineté de Dieu dans la réprobation"><h2 id="titre-chapitre-5">5. La souveraineté de Dieu dans la réprobation</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-6" aria-labelledby="titre-chapitre-6" data-title="6. La souveraineté de Dieu en action"><h2 id="titre-chapitre-6">6. La souveraineté de Dieu en action</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-7" aria-labelledby="titre-chapitre-7" data-title="7. La souveraineté de Dieu dans la volonté humaine"><h2 id="titre-chapitre-7">7. La souveraineté de Dieu dans la volonté humaine</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-8" aria-labelledby="titre-chapitre-8" data-title="8. Souveraineté et responsabilité humaine"><h2 id="titre-chapitre-8">8. Souveraineté et responsabilité humaine</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-9" aria-labelledby="titre-chapitre-9" data-title="9. La souveraineté de Dieu et la prière"><h2 id="titre-chapitre-9">9. La souveraineté de Dieu et la prière</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-10" aria-labelledby="titre-chapitre-10" data-title="10. Notre attitude envers sa souveraineté"><h2 id="titre-chapitre-10">10. Notre attitude envers sa souveraineté</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-11" aria-labelledby="titre-chapitre-11" data-title="11. Difficultés et objections"><h2 id="titre-chapitre-11">11. Difficultés et objections</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-12" aria-labelledby="titre-chapitre-12" data-title="12. La valeur de cette doctrine"><h2 id="titre-chapitre-12">12. La valeur de cette doctrine</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
+      <section class="chapter" id="chapitre-13" aria-labelledby="titre-chapitre-13" data-title="13. Conclusion"><h2 id="titre-chapitre-13">13. Conclusion</h2><div class="chapter-copy"><p class="chapter-placeholder">Contenu à ajouter.</p></div></section>
 
       <section class="chapter" id="notes-de-bas-de-page" aria-labelledby="titre-notes" data-title="Notes de bas de page">
         <h2 id="titre-notes">Notes de bas de page</h2>
-        <div class="chapter-copy">
-          <ol class="footnotes">
-            <li id="note-1"><span class="note-number">[1]</span> Parmi ceux qui ont traité le plus utilement du sujet de la souveraineté de Dieu ces dernières années, nous citons les docteurs Rice, JB Moody et George S. Bishop, dont les écrits nous ont également instruits.<a class="note-back" href="#ref-note-1" aria-label="Retour au renvoi de la note 1">↩ Retour au texte</a></li>
-            <li id="note-2"><span class="note-number">[2]</span> orthodoxe : littéralement, « croyance juste » ; qui adhère à l’ensemble des doctrines essentielles à la foi chrétienne ; cela implique une cohérence dans la croyance et le culte avec la révélation des Saintes Écritures.<a class="note-back" href="#ref-note-2" aria-label="Retour au renvoi de la note 2">↩ Retour au texte</a></li>
-            <li id="note-3"><span class="note-number">[3]</span> hétérodoxe : s’écartant des doctrines établies ; penchant vers l’hérésie.<a class="note-back" href="#ref-note-3" aria-label="Retour au renvoi de la note 3">↩ Retour au texte</a></li>
-            <li id="note-4"><span class="note-number">[4]</span> L’hypercalvinisme : la distorsion de la doctrine réformée qui soutient que, puisque Dieu a sauvé infailliblement ceux qu’il a choisis pour le salut, il n’y a pas besoin d’obéissance humaine à la Grande Mission d’évangéliser le monde.<a class="note-back" href="#ref-note-4" aria-label="Retour au renvoi de la note 4">↩ Retour au texte</a></li>
-          </ol>
-        </div>
+        <div class="chapter-copy"><ol class="footnotes">
+          <li id="note-1"><span class="note-number">[1]</span> Parmi ceux qui ont traité le plus utilement du sujet de la souveraineté de Dieu ces dernières années, nous citons les docteurs Rice, JB Moody et George S. Bishop, dont les écrits nous ont également instruits.<a class="note-back" href="#ref-note-1" aria-label="Retour au renvoi de la note 1">↩ Retour au texte</a></li>
+          <li id="note-2"><span class="note-number">[2]</span> orthodoxe : littéralement, « croyance juste » ; qui adhère à l’ensemble des doctrines essentielles à la foi chrétienne ; cela implique une cohérence dans la croyance et le culte avec la révélation des Saintes Écritures.<a class="note-back" href="#ref-note-2" aria-label="Retour au renvoi de la note 2">↩ Retour au texte</a></li>
+          <li id="note-3"><span class="note-number">[3]</span> hétérodoxe : s’écartant des doctrines établies ; penchant vers l’hérésie.<a class="note-back" href="#ref-note-3" aria-label="Retour au renvoi de la note 3">↩ Retour au texte</a></li>
+          <li id="note-4"><span class="note-number">[4]</span> L’hypercalvinisme : la distorsion de la doctrine réformée qui soutient que, puisque Dieu a sauvé infailliblement ceux qu’il a choisis pour le salut, il n’y a pas besoin d’obéissance humaine à la Grande Mission d’évangéliser le monde.<a class="note-back" href="#ref-note-4" aria-label="Retour au renvoi de la note 4">↩ Retour au texte</a></li>
+        </ol></div>
       </section>
 
       <nav class="page-nav" aria-label="Navigation de lecture">
-        <button id="previous-chapter" type="button">← Précédent</button>
+        <button id="previous-chapter" type="button" aria-label="Page précédente">← Précédent</button>
         <span class="page-status" id="page-status" aria-live="polite"></span>
-        <button id="next-chapter" type="button">Suivant →</button>
+        <button id="next-chapter" type="button" aria-label="Page suivante">Suivant →</button>
       </nav>
     </article>
   </main>
@@ -203,23 +165,42 @@
       const next = document.getElementById('next-chapter');
       const storageKey = 'heritage-grace-reading-souverainete-de-dieu';
       let current = 0;
+      let page = 0;
+      let pageCount = 1;
 
       chapters.forEach((chapter, index) => {
-        const title = chapter.dataset.title;
         const item = document.createElement('li');
         const link = document.createElement('a');
         link.href = `#${chapter.id}`;
-        link.textContent = title;
+        link.textContent = chapter.dataset.title;
         link.addEventListener('click', event => { event.preventDefault(); showChapter(index); });
         item.append(link);
         toc.append(item);
         const option = document.createElement('option');
         option.value = index;
-        option.textContent = title;
+        option.textContent = chapter.dataset.title;
         select.append(option);
       });
 
-      function showChapter(index, save = true, targetId = null) {
+      function activeIndex() { return chapters.findIndex(chapter => chapter.classList.contains('active')); }
+      function activeCopy() { return chapters[current]?.querySelector('.chapter-copy'); }
+      function measurePages() {
+        const copy = activeCopy();
+        if (!copy) return;
+        const width = Math.max(1, copy.clientWidth);
+        pageCount = Math.max(1, Math.ceil((copy.scrollWidth - 2) / width));
+        page = Math.min(page, pageCount - 1);
+        updateControls();
+      }
+      function updateControls() {
+        const globalProgress = Math.round(((current + (page + 1) / pageCount) / chapters.length) * 100);
+        progress.value = globalProgress;
+        progressLabel.textContent = `${globalProgress} %`;
+        status.textContent = `Page ${page + 1} sur ${pageCount} · ${chapters[current].dataset.title}`;
+        previous.disabled = current === 0 && page === 0;
+        next.disabled = current === chapters.length - 1 && page >= pageCount - 1;
+      }
+      function showChapter(index, save = true, anchorId = null) {
         current = Math.max(0, Math.min(index, chapters.length - 1));
         chapters.forEach((chapter, i) => chapter.classList.toggle('active', i === current));
         [...toc.querySelectorAll('a')].forEach((link, i) => {
@@ -227,45 +208,93 @@
           else link.removeAttribute('aria-current');
         });
         select.value = String(current);
-        previous.disabled = current === 0;
-        next.disabled = current === chapters.length - 1;
-        const percent = Math.round(((current + 1) / chapters.length) * 100);
-        progress.value = percent;
-        progressLabel.textContent = `${percent} %`;
-        status.textContent = `Section ${current + 1} sur ${chapters.length}`;
-        const hash = targetId || chapters[current].id;
-        history.replaceState(null, '', `#${hash}`);
+        page = 0;
+        history.replaceState(null, '', `#${anchorId || chapters[current].id}`);
         if (save) localStorage.setItem(storageKey, String(current));
-        if (targetId) document.getElementById(targetId)?.scrollIntoView({ block: 'center' });
+        requestAnimationFrame(() => {
+          const copy = activeCopy();
+          if (copy) copy.scrollLeft = 0;
+          if (anchorId) goToAnchor(anchorId);
+          measurePages();
+        });
       }
-
-      document.addEventListener('click', event => {
-        const link = event.target.closest('a[href^="#"]');
-        if (!link || link.closest('.toc')) return;
-        const targetId = decodeURIComponent(link.getAttribute('href').slice(1));
-        const target = document.getElementById(targetId);
-        const chapter = target?.closest('.chapter');
-        if (!chapter) return;
-        event.preventDefault();
-        showChapter(chapters.indexOf(chapter), true, targetId);
-      });
-      previous.addEventListener('click', () => showChapter(current - 1));
-      next.addEventListener('click', () => showChapter(current + 1));
+      function setPage(nextPage) {
+        const copy = activeCopy();
+        page = Math.max(0, Math.min(nextPage, pageCount - 1));
+        if (copy) copy.scrollTo({ left: page * copy.clientWidth, behavior: 'smooth' });
+        updateControls();
+        localStorage.setItem(`${storageKey}-page`, String(page));
+      }
+      function turnPage(direction) {
+        if (direction > 0 && page < pageCount - 1) return setPage(page + 1);
+        if (direction < 0 && page > 0) return setPage(page - 1);
+        const destination = current + direction;
+        if (destination >= 0 && destination < chapters.length) {
+          showChapter(destination);
+          requestAnimationFrame(() => {
+            if (direction < 0) {
+              measurePages();
+              setPage(pageCount - 1);
+            }
+          });
+        }
+      }
+      function goToAnchor(id) {
+        const target = document.getElementById(id);
+        const copy = target?.closest('.chapter.active')?.querySelector('.chapter-copy');
+        if (!target || !copy) return;
+        const targetLeft = copy.scrollLeft + target.getBoundingClientRect().left - copy.getBoundingClientRect().left;
+        page = Math.max(0, Math.min(Math.floor(targetLeft / Math.max(1, copy.clientWidth)), pageCount - 1));
+        copy.scrollLeft = page * copy.clientWidth;
+        updateControls();
+      }
+      previous.addEventListener('click', event => { event.stopImmediatePropagation(); turnPage(-1); }, true);
+      next.addEventListener('click', event => { event.stopImmediatePropagation(); turnPage(1); }, true);
       select.addEventListener('change', () => showChapter(Number(select.value)));
       document.getElementById('decrease-font').addEventListener('click', () => {
         const size = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--reader-size'));
         document.documentElement.style.setProperty('--reader-size', `${Math.max(0.9, size - 0.1)}rem`);
+        requestAnimationFrame(measurePages);
       });
       document.getElementById('increase-font').addEventListener('click', () => {
         const size = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--reader-size'));
         document.documentElement.style.setProperty('--reader-size', `${Math.min(1.7, size + 0.1)}rem`);
+        requestAnimationFrame(measurePages);
       });
+      document.addEventListener('click', event => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link || link.closest('.toc')) return;
+        const id = decodeURIComponent(link.getAttribute('href').slice(1));
+        const target = document.getElementById(id);
+        const targetChapter = target?.closest('.chapter');
+        if (!targetChapter) return;
+        event.preventDefault();
+        const targetIndex = chapters.indexOf(targetChapter);
+        if (targetIndex !== current) showChapter(targetIndex, true, id);
+        else { history.replaceState(null, '', `#${id}`); goToAnchor(id); }
+      });
+      document.addEventListener('keydown', event => {
+        if (event.altKey || event.ctrlKey || event.metaKey || /INPUT|SELECT|TEXTAREA|BUTTON/.test(document.activeElement.tagName)) return;
+        if (event.key === 'ArrowRight' || event.key === 'PageDown') { event.preventDefault(); turnPage(1); }
+        if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); turnPage(-1); }
+      });
+      let touchStartX = 0;
+      document.querySelector('.book').addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+      document.querySelector('.book').addEventListener('touchend', event => {
+        const delta = event.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(delta) > 65) turnPage(delta < 0 ? 1 : -1);
+      }, { passive: true });
+      window.addEventListener('resize', () => requestAnimationFrame(measurePages));
 
       const target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
       const targetChapter = target?.closest('.chapter');
       const hashIndex = targetChapter ? chapters.indexOf(targetChapter) : -1;
       const savedIndex = Number(localStorage.getItem(storageKey));
       showChapter(hashIndex >= 0 ? hashIndex : (Number.isInteger(savedIndex) && savedIndex < chapters.length ? savedIndex : 0), false, target?.id || null);
+      if (hashIndex < 0) {
+        const savedPage = Number(localStorage.getItem(`${storageKey}-page`));
+        if (Number.isInteger(savedPage) && savedPage >= 0) requestAnimationFrame(() => { measurePages(); setPage(savedPage); });
+      }
     })();
   </script>
 </body>
