@@ -41,7 +41,7 @@
     .chapter { display:none; flex:1 1 0; min-height:0; padding:.5rem 0 0; }
     .chapter.active { display:flex; flex-direction:column; }
     .chapter h2 { flex:0 0 auto; margin:.2rem 0 .55rem; color:var(--navy); text-align:center; font-size:clamp(1.2rem,2vw,1.6rem); font-weight:400; }
-    .chapter-copy { width:100%; height:0; min-height:0; flex:1 1 0; margin:0; padding:0; overflow-x:auto; overflow-y:hidden; column-width:1000px; column-gap:2rem; column-fill:balance; font-size:var(--reader-size); line-height:1.7; text-align:justify; hyphens:auto; scroll-behavior:smooth; scrollbar-width:thin; scrollbar-color:#b9c1c5 transparent; }
+    .chapter-copy { width:100%; height:0; min-height:0; flex:1 1 0; margin:0; padding:0; overflow-x:auto; overflow-y:hidden; column-width:var(--page-column-width,100%); column-gap:2rem; column-fill:balance; font-size:var(--reader-size); line-height:1.7; text-align:justify; hyphens:auto; scroll-behavior:smooth; scrollbar-width:thin; scrollbar-color:#b9c1c5 transparent; }
     .chapter-copy p { margin:0 0 .85em; }
     .chapter-copy .subheading { margin-top:.5rem; color:var(--navy); font-size:1.06em; font-weight:700; break-after:avoid; }
     .chapter-copy .signature { margin-top:1.25rem; text-align:right; font-style:italic; }
@@ -121,7 +121,30 @@
       let current=0,page=0,pageCount=1,resizeTimer;
       chapters.forEach((chapter,index)=>{const li=document.createElement('li'),link=document.createElement('a');link.href=`#${chapter.id}`;link.textContent=chapter.dataset.title;link.addEventListener('click',event=>{event.preventDefault();showChapter(index);});li.append(link);toc.append(li);const option=document.createElement('option');option.value=index;option.textContent=chapter.dataset.title;select.append(option);});
       const copy=()=>chapters[current]?.querySelector('.chapter-copy');
-      function measure(){const area = copy();if(!area || !area.clientWidth) return;pageCount=Math.max(1,Math.ceil(area.scrollWidth / area.clientWidth));page = Math.min(page, pageCount - 1);update();}
+      function measure(){
+    const area = copy();
+    if(!area || !area.clientWidth) return;
+
+    const pageWidth = area.clientWidth;
+    area.style.setProperty('--page-column-width', `${pageWidth}px`);
+
+    const gap = parseFloat(getComputedStyle(area).columnGap) || 0;
+    const pageStep = pageWidth + gap;
+
+    pageCount = Math.max(
+        1,
+        Math.ceil((area.scrollWidth + gap) / pageStep)
+    );
+
+    page = Math.min(page, pageCount - 1);
+
+    area.scrollTo({
+        left: page * pageStep,
+        behavior: 'auto'
+    });
+
+    update();
+}
       function update(){const pct=pageCount?Math.round(((current+(page+1)/pageCount)/chapters.length)*100):0;progress.value=pct;progressLabel.textContent=`${pct} %`;status.textContent=`Page ${page+1} sur ${pageCount} · ${chapters[current].dataset.title}`;previous.disabled=current===0&&page===0;next.disabled=current===chapters.length-1&&page===pageCount-1;}
       function showChapter(index,save=true){current=Math.max(0,Math.min(index,chapters.length-1));chapters.forEach((chapter,i)=>chapter.classList.toggle('active',i===current));[...toc.querySelectorAll('a')].forEach((link,i)=>{if(i===current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});select.value=String(current);page=0;const area=copy();if(area)area.scrollLeft=0;history.replaceState(null,'',`#${chapters[current].id}`);if(save){localStorage.setItem(key,String(current));localStorage.setItem(`${key}-page`,'0');}requestAnimationFrame(()=>requestAnimationFrame(measure));}
       function setPage(value){const area=copy();page=Math.max(0,Math.min(value,pageCount-1));if(area)area.scrollTo({left:page*area.clientWidth,behavior:'smooth'});localStorage.setItem(`${key}-page`,String(page));update();}
