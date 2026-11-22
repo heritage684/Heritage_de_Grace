@@ -58,12 +58,18 @@
     footer { display:none; }
     @media(max-width:900px) { .reader-layout { grid-template-columns:1fr; } .toc { position:static; max-height:110px; overflow:auto; padding:.65rem 1rem; } .toc h2 { margin-bottom:.35rem; } .toc ol { columns:3; } .book { height:calc(100dvh - 285px); min-height:460px; } }
     @media(max-width:560px) { .topbar { align-items:flex-start; flex-direction:column; } .topbar nav { flex-wrap:wrap; gap:1rem; } .reader-toolbar { align-items:flex-start; flex-direction:column; } .tools { width:100%; flex-wrap:wrap; } .toc ol { columns:2; } .book { height:calc(100dvh - 320px); min-height:410px; padding:.85rem; } .chapter-copy { column-width:100%; column-gap:1.5rem; text-align:left; } .page-nav button { padding-inline:.55rem; font-size:.8rem; } }
-    @media(prefers-reduced-motion:reduce) { .chapter-copy { scroll-behavior:auto; } }
+    @media(prefers-reduced-motion:reduce) { .chapter-copy { scroll-behavior:auto; } }.reader-layout.toc-hidden {
+    grid-template-columns: 1fr;
+}
+
+.reader-layout.toc-hidden .toc {
+    display: none;
+}
   </style>
 </head>
 <body>
   <header class="topbar"><a class="brand" href="../../index.html">✦ Héritage de Grâce</a><nav aria-label="Navigation principale"><a href="../">Livres</a><a href="../../auteurs/">Auteurs</a><a href="../../%C3%A0%20propos/">À propos</a></nav></header>
-  <div class="reader-toolbar" aria-label="Outils de lecture"><span class="book-label">Lecture en ligne · Arthur W. Pink</span><div class="tools"><label class="book-label" for="chapter-select">Aller au chapitre</label><select id="chapter-select" aria-label="Choisir un chapitre"></select><button id="decrease-font" type="button" aria-label="Diminuer la taille du texte">A−</button><button id="increase-font" type="button" aria-label="Augmenter la taille du texte">A+</button></div></div>
+  <div class="reader-toolbar" aria-label="Outils de lecture">📖 Sommaire<span class="book-label">Lecture en ligne · Arthur W. Pink</span><div class="tools"><label class="book-label" for="chapter-select">Aller au chapitre</label><select id="chapter-select" aria-label="Choisir un chapitre"></select><button id="decrease-font" type="button" aria-label="Diminuer la taille du texte">A−</button><button id="increase-font" type="button" aria-label="Augmenter la taille du texte">A+</button></div></div>
   <div class="progress-wrap"><span>Progression</span><progress id="reading-progress" max="100" value="0">0%</progress><span id="progress-label">0 %</span></div>
   <main class="reader-layout">
     <nav class="toc" aria-labelledby="toc-title"><h2 id="toc-title">Table des matières</h2><ol id="toc-list"></ol></nav>
@@ -178,7 +184,12 @@
       document.addEventListener('keydown',event=>{if(event.altKey||event.ctrlKey||event.metaKey||/INPUT|SELECT|TEXTAREA|BUTTON/.test(document.activeElement.tagName))return;if(event.key==='ArrowRight'||event.key==='PageDown'){event.preventDefault();turn(1);}if(event.key==='ArrowLeft'||event.key==='PageUp'){event.preventDefault();turn(-1);}});
       let touchX=0;document.querySelector('.book').addEventListener('touchstart',event=>{touchX=event.changedTouches[0].clientX;},{passive:true});document.querySelector('.book').addEventListener('touchend',event=>{const delta=event.changedTouches[0].clientX-touchX;if(Math.abs(delta)>65)turn(delta<0?1:-1);},{passive:true});window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{page=0;const area=copy();if(area)area.scrollLeft=0;measure();},120);});
       const hash=location.hash?document.getElementById(decodeURIComponent(location.hash.slice(1))):null,hashSection=hash?.closest('.chapter'),hashIndex=hashSection?chapters.indexOf(hashSection):-1,saved=Number(localStorage.getItem(key));showChapter(hashIndex>=0?hashIndex:(Number.isInteger(saved)&&saved>=0&&saved<chapters.length?saved:0),false);const savedPage=Number(localStorage.getItem(`${key}-page`));if(hashIndex<0&&Number.isInteger(savedPage)&&savedPage>=0)requestAnimationFrame(()=>requestAnimationFrame(()=>{measure();setPage(savedPage);}));
-    })();
+    })();const toggleButton = document.getElementById('toggle-toc');
+const readerLayout = document.querySelector('.reader-layout');
+
+toggleButton.addEventListener('click', () => {
+    readerLayout.classList.toggle('toc-hidden');
+});
   </script>
 </body>
 </html>
