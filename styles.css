@@ -130,3 +130,12 @@ footer p, footer > a:last-child { color: var(--muted); font-size: 10px; }
   footer { padding: 25px 6%; flex-wrap: wrap; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+.about-card a {
+    color: #1f4d3b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.about-card a:hover {
+    color: #b08b4f;
+}
