@@ -59,11 +59,11 @@
     @media(max-width:900px) { .reader-layout { grid-template-columns:1fr; } .toc { position:static; max-height:110px; overflow:auto; padding:.65rem 1rem; } .toc h2 { margin-bottom:.35rem; } .toc ol { columns:3; } .book { height:calc(100dvh - 285px); min-height:460px; } }
     @media(max-width:560px) { .topbar { align-items:flex-start; flex-direction:column; } .topbar nav { flex-wrap:wrap; gap:1rem; } .reader-toolbar { align-items:flex-start; flex-direction:column; } .tools { width:100%; flex-wrap:wrap; } .toc ol { columns:2; } .book { height:calc(100dvh - 320px); min-height:410px; padding:.85rem; } .chapter-copy { column-width:100%; column-gap:1.5rem; text-align:left; } .page-nav button { padding-inline:.55rem; font-size:.8rem; } }
     @media(prefers-reduced-motion:reduce) { .chapter-copy { scroll-behavior:auto; } }.reader-layout.toc-hidden {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
 }
 
 .reader-layout.toc-hidden .toc {
-    display: none;
+    display: none !important;
 }
   </style>
 </head>
