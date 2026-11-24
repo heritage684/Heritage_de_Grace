@@ -67,16 +67,11 @@ footer a:hover { color: var(--gold); }
  min-height: 570px;
  padding: 114px 10% 70px;
  text-align: center;
-
- background:
- linear-gradient(
- rgba(255,255,255,0.85),
- rgba(255,255,255,0.85)
- ),
- url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1800&q=80');
-
- background-size: cover;
- background-position: center;
+ background: radial-gradient(
+   ellipse at 50% 20%,
+   #f1eee4 0%,
+   var(--paper) 63%
+ );
 }
 .eyebrow { margin: 0 0 18px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
