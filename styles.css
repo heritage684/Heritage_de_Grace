@@ -131,7 +131,48 @@ footer p, footer > a:last-child { color: var(--muted); font-size: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
 .about-card a {
-    color: #1f4d3b;
+    color: /* Palette Héritage de Grâce */
+
+:root {
+  --color-primary: #4A3428;
+  --color-primary-hover: #6A4D3C;
+  --color-accent: #B08B4F;
+  --color-background: #F8F6F1;
+}
+
+/* Grand titre accueil */
+.hero h1,
+.hero-title {
+  color: #4A3428;
+}
+
+/* Partie italique du titre */
+.hero em,
+.hero-title em {
+  color: #8A6A3D;
+}
+
+/* Boutons */
+button,
+.btn,
+.search-button {
+  background: #4A3428;
+}
+
+button:hover,
+.btn:hover,
+.search-button:hover {
+  background: #6A4D3C;
+}
+
+/* Liens */
+a {
+  color: #4A3428;
+}
+
+a:hover {
+  color: #B08B4F;
+};
     text-decoration: none;
     font-weight: 500;
 }
