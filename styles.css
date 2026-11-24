@@ -4,7 +4,7 @@
  color-scheme: light;
  --ink: #4A3428;
  --muted: #6f6257;
- --green: #4A3428;
+ --green: #ff0000;
  --gold: #B08B4F;
  --paper: #fbfaf6;
  --line: #e8e5db;
@@ -131,45 +131,14 @@ footer p, footer > a:last-child { color: var(--muted); font-size: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
 .about-card a {
-    color: 
-  --color-primary-hover: #6A4D3C;
-  --color-accent: #B08B4F;
-  --color-background: #F8F6F1;
+ color: #4A3428;
+ text-decoration: none;
+ font-weight: 500;
 }
 
-/* Grand titre accueil */
-.hero h1,
-.hero-title {
-  color: #4A3428;
+.about-card a:hover {
+ color: #B08B4F;
 }
-
-/* Partie italique du titre */
-.hero em,
-.hero-title em {
-  color: #8A6A3D;
-}
-
-/* Boutons */
-button,
-.btn,
-.search-button {
-  background: #4A3428;
-}
-
-button:hover,
-.btn:hover,
-.search-button:hover {
-  background: #6A4D3C;
-}
-
-/* Liens */
-a {
-  color: #4A3428;
-}
-
-a:hover {
-  color: #B08B4F;
-};
     text-decoration: none;
     font-weight: 500;
 }
