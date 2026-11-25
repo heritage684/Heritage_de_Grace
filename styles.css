@@ -169,4 +169,14 @@ footer p, footer > a:last-child { color: var(--muted); font-size: 10px; }
   padding: 25px;
   border: 1px solid var(--line);
   background: #fff;
+}.article-meta {
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+  color: #7a7a7a;
+
+  font-size: 14px;
+  font-style: italic;
+
+  text-align: left;
 }
