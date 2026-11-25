@@ -197,4 +197,14 @@ footer p, footer > a:last-child { color: var(--muted); font-size: 10px; }
 
   max-width: 850px;
   margin: 0 auto 50px;
+} .author-link {
+ color: var(--green);
+ font-weight: 600;
+ text-decoration: none;
+}
+
+.author-link:hover {
+ color: var(--gold);
+ text-decoration: underline;
+ text-underline-offset: 3px;
 }
