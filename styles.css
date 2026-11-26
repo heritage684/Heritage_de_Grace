@@ -146,10 +146,12 @@ footer p, footer > a:last-child { color: var(--muted); font-size: 10px; }
   .hero-copy { max-width: 520px; font-size: 14px; }
   .hero-search { width: min(100%, 520px); }
 }.article-body {
-  max-width: 850px;
+  max-width: 1000px;
   margin: 40px auto;
   font-size: 18px;
   line-height: 1.9;
+}.article-divider {
+ max-width: 1000px;
 }
 
 .article-body p {
