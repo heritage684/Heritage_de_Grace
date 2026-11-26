@@ -213,4 +213,9 @@ footer p, footer > a:last-child { color: var(--muted); font-size: 10px; }
  color: var(--gold);
  text-decoration: underline;
  text-underline-offset: 3px;
+}.about-card p,
+.about-card li {
+    text-align: justify;
+    text-justify: inter-word; hyphens: auto;
+    line-height: 1.8;
 }
