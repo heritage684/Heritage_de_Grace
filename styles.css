@@ -4,7 +4,7 @@
  color-scheme: light;
  --ink: #20352f;
  --muted: #65756e;
- --green: #35584b;
+ --green: #1f6b57;
  --gold: #C29A57;
  --paper: #fbfaf6;
  --line: #e8e5db;
@@ -53,7 +53,7 @@ h1 { margin: 0; font-size: clamp(38px, 5.2vw, 65px); line-height: 1.15; letter-s
 h1 em { color: #C29A57; font-weight: 500; }
 .hero-copy { max-width: 555px; margin: 23px auto 28px; color: var(--muted); font-size: 15px; line-height: 1.8; }
 .button { display: inline-flex; gap: 18px; align-items: center; padding: 14px 21px; border: 1px solid var(--green); border-radius: 5px; background: var(--green); color: white; font-size: 13px; font-weight: 700; }
-.button:hover { background: #243f34; }
+.button:hover { background: #184f42; }
 .button-secondary { background: #fff; color: var(--green); }
 .button-secondary:hover { color: #fff; }
 .section-action { margin: 28px 0 0; }
@@ -74,7 +74,7 @@ h2 { margin: 0; font-size: clamp(30px, 3.5vw, 42px); letter-spacing: -.025em; }
 .filter:hover, .filter.active { border-color: var(--green); background: var(--green); color: white; }
 .book-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .book-card { min-height: 275px; padding: 25px 24px; border: 1px solid var(--line); background: var(--paper); transition: transform .2s, box-shadow .2s; }
-.book-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px #20352f0b; }
+.book-card:hover { transform: translateY(-4px); border-color: var(--green); box-shadow: 0 12px 30px rgba(31,107,87,.18); }
 .card-number { color: var(--gold); font-size: 10px; letter-spacing: .1em; }
 .card-number span { padding-left: 6px; color: #89938b; font-size: 9px; }
 .book-card h3 { margin: 28px 0 9px; font-size: 23px; }
