@@ -165,6 +165,10 @@ footer p, footer > a:last-child { color: var(--muted); font-size: 10px; }
   border-left: 3px solid var(--gold);
   color: var(--muted);
 }
+.article-body p {
+    text-align: justify;
+    hyphens: auto;
+}
 
 .article-source {
   margin-top: 60px;
