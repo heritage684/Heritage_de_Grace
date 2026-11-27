@@ -45,7 +45,7 @@ footer a:hover { color: var(--gold); }
  background-repeat: no-repeat;
  display: flex;
  flex-direction: column;
- justify-content: center; border-bottom: 1px solid rgba(194,154,87,.7);
+ justify-content: center; border-bottom: 2px solid var(--gold);
 }
 .eyebrow { margin: 0 0 18px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
@@ -136,7 +136,7 @@ nav a {
  text-shadow: 0 3px 3px rgba(0,0,0,.72),
               0 8px 28px rgba(0,0,0,.48);
 }
-.hero-copy { max-width: 610px; color: #fffdf6; font-size: 18px; margin-bottom: 40px; text-shadow: 0 2px 3px rgba(0,0,0,.95), 0 4px 14px rgba(0,0,0,.78); }
+.hero-copy { max-width: 610px; color: #ffffff; font-size: 19px; font-weight: 500; margin-bottom: 40px; text-shadow: 0 2px 3px rgba(0,0,0,.95), 0 4px 14px rgba(0,0,0,.78); }
 .hero-search {
  width: min(100%, 500px); margin-top: 28px; padding: 12px 14px 10px; border: 1px solid rgba(255,255,255,.75); background: rgba(255,255,255,.94); box-shadow: 0 12px 36px rgba(16,28,24,.30); backdrop-filter: blur(8px); }
 .hero-search > label { margin-bottom: 7px; font-size: 12px; }
