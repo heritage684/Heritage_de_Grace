@@ -370,4 +370,19 @@ nav a {
 .chapter-topics a:hover{
     background:var(--green);
     color:white;
+}.journey-overview{
+    margin:50px auto 70px;
+    text-align:center;
+    font-family:var(--serif);
+}
+
+.journey-overview div{
+    font-size:30px;
+    color:var(--green);
+}
+
+.journey-arrow{
+    margin:10px 0;
+    color:var(--gold) !important;
+    font-size:34px !important;
 }
