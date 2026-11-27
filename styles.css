@@ -385,4 +385,14 @@ nav a {
     margin:10px 0;
     color:var(--gold) !important;
     font-size:34px !important;
+}.journey-overview a{
+    color: var(--green);
+    text-decoration: none;
+    transition: .25s ease;
 }
+
+.journey-overview a:hover{
+    color: var(--gold);
+    transform: scale(1.03);
+}
+
