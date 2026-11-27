@@ -371,18 +371,18 @@ nav a {
     background:var(--green);
     color:white;
 }.journey-overview{
-    margin:50px auto 70px;
+    margin:40px auto 50px;
     text-align:center;
     font-family:var(--serif);
 }
 
 .journey-overview div{
-    font-size:30px;
+    font-size:34px;
     color:var(--green);
 }
 
 .journey-arrow{
-    margin:10px 0;
+    margin:4px 0;
     color:var(--gold) !important;
     font-size:34px !important;
 }.journey-overview a{
@@ -395,4 +395,20 @@ nav a {
     color: var(--gold);
     transform: scale(1.03);
 }
+.journey-overview a{
+    display:inline-block;
+    padding:14px 28px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:#fff;
+    color:var(--green);
+    font-size:34px;
+    transition:.25s ease;
+}
 
+.journey-overview a:hover{
+    background:var(--green);
+    color:white;
+    border-color:var(--green);
+    transform:translateY(-2px);
+}
